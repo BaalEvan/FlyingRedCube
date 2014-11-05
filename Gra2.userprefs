@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\game\flyredcubefly.cs">
+    <Files>
+      <File FileName="Assets\Code\game\postac.cs" Line="46" Column="2" />
+      <File FileName="Assets\Code\game\figurki.cs" Line="16" Column="45" />
+      <File FileName="Assets\Code\game\flyredcubefly.cs" Line="20" Column="104" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
