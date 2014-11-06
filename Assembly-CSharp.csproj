@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{06417DEC-29B2-E0C8-BD8C-78DC8F1539DD}</ProjectGuid>
+	<ProjectGuid>{1390CFA2-BA9E-F0AA-038E-8F6A40A3554F}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Code\game\backtomenugame.cs" />
      <Compile Include="Assets\Code\game\figurki.cs" />
+     <Compile Include="Assets\Code\game\floorscript.cs" />
      <Compile Include="Assets\Code\game\flyredcubefly.cs" />
      <Compile Include="Assets\Code\game\postac.cs" />
      <Compile Include="Assets\Code\game\startplayfrompause.cs" />
