@@ -10,9 +10,9 @@ public class figurki: MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-			transform.position = new Vector3 (transform.position.x-0.08f, transform.position.y, transform.position.z);
+			transform.position = new Vector3 (transform.position.x0.08f, transform.position.y, transform.position.z);
 			
-		if (transform.position.x < -55) {
+		if (transform.position.x < -23.1f) {
 			transform.position = new Vector2(-19.395f,transform.position.y);
 			}
 	}
