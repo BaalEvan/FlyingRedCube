@@ -18,6 +18,6 @@ public class endGamebtn : MonoBehaviour {
 
 	void OnMouseDown (){
 		Application.Quit();
-		Debug.Log("aaaaaa");
+		Debug.Log("ZamkniecieGry");
 	}
 }
