@@ -14,8 +14,8 @@ public class kwadratprzesuniecie : MonoBehaviour {
     {
         if (!rozpoczecie)
         {
-            Time.timeScale = 1;
             transform.position = new Vector3(transform.position.x - 0.07f, transform.position.y, transform.position.z);
+			Time.timeScale = 1;
         }
 
         if (transform.position.x < -12f)

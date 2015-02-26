@@ -34,10 +34,11 @@ public class flyredcubefly : MonoBehaviour
     {
 						if (!dead)
 						if (clicked)
-								postac.rigidbody2D.AddForceAtPosition (new Vector2 (0, 50f), new Vector2 (0, 35f));
+								postac.rigidbody2D.AddForceAtPosition (new Vector2 (0, 60f), new Vector2 (0, 45f));
 
 		if (dead) {
 			gameObject.SetActive(false);
+			pkt.SetActive (false);
 				}
 
 		}

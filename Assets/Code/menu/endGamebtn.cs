@@ -11,13 +11,14 @@ public class endGamebtn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown (KeyCode.Escape)){
-			Application.Quit();
-		}
+            Application.Quit();
+            Debug.Log("ZamkniecieProgramu");
+        }
 	}
 
 
 	void OnMouseDown (){
 		Application.Quit();
-		Debug.Log("ZamkniecieGry");
+		Debug.Log("ZamkniecieProgramu");
 	}
 }

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class startplayfrompause : MonoBehaviour {
+public class playagainbtn : MonoBehaviour {
+
 	// Use this for initialization
 	void Start () {
 	
@@ -9,12 +10,12 @@ public class startplayfrompause : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	
 	}
-
-
-	void OneMouseDown () {
-		Debug.Log ("OneMoreTimeBtn");
-		Time.timeScale = 1;
+	void OnMouseDown ()
+	{
 		Application.LoadLevel ("game");
+		Time.timeScale = 1;
+		Debug.Log ("againBTN");
 	}
 }

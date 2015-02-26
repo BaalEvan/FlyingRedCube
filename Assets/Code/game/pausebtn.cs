@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class backtomenugame : MonoBehaviour {
+public class pausebtn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -11,11 +11,5 @@ public class backtomenugame : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-	}
-
-	void OnMouseDown () {
-		Application.LoadLevel ("Menu");
-		Time.timeScale = 1;
-		Debug.Log ("BackToMenuBTN");
 	}
 }

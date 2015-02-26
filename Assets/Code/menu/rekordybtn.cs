@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class startplayfrompause : MonoBehaviour {
+public class rekordybtn : MonoBehaviour {
+
 	// Use this for initialization
 	void Start () {
 	
@@ -9,12 +10,13 @@ public class startplayfrompause : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+			
 	}
 
-
-	void OneMouseDown () {
-		Debug.Log ("OneMoreTimeBtn");
+	void OnMouseDown ()
+	{
+		Application.LoadLevel ("rekordy");
 		Time.timeScale = 1;
-		Application.LoadLevel ("game");
+		Debug.Log ("rekordyBTN");
 	}
 }
