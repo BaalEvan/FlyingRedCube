@@ -12,9 +12,10 @@ public class flyredcubefly : MonoBehaviour
     public SpawnController contro;
     public figurki zatrzymanieruchu;
     public GameObject taptoplay;
-    public GameObject pkt;
+    public GameObject punk;
     public bool glupota = true;
-	
+
+    public int pkt=0;
 
     //public postac pScript;
 
@@ -38,7 +39,7 @@ public class flyredcubefly : MonoBehaviour
 
 		if (dead) {
 			gameObject.SetActive(false);
-			pkt.SetActive (false);
+			punk.SetActive (false);
 				}
 
 		}
@@ -52,7 +53,7 @@ public class flyredcubefly : MonoBehaviour
             contro.stop = false;
             zatrzymanieruchu.stopmove = true;
             taptoplay.SetActive(false);
-            pkt.SetActive(true);
+            punk.SetActive(true);
 
             glupota = false;
         }

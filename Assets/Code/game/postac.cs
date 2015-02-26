@@ -11,6 +11,7 @@ public class postac : MonoBehaviour
     public GameObject pause;
     public bool pausebool = true;
     public figurki zatrzymanieruchu;
+
     public int Pkt = 0;
 
     void Start()

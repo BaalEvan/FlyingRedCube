@@ -3,6 +3,7 @@ using System.Collections;
 
 public class figurki: MonoBehaviour {
     public bool stopmove;
+    public bool stopmovee;
     public flyredcubefly frcf;
     public postac pauza;
 
@@ -15,7 +16,9 @@ public class figurki: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (stopmove = !frcf.dead || pauza.pausebool)
+        stopmove = !frcf.dead;
+     //   stopmovee = pauza.pausebool;
+
         if (stopmove)
         {
             this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x - 0.08f, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
