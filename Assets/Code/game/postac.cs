@@ -9,7 +9,6 @@ public class postac : MonoBehaviour
     public SpawnController contro;
     public GameObject Timer;
     public GameObject pause;
-    public bool pausebool = true;
     public figurki zatrzymanieruchu;
 
     public int Pkt = 0;
@@ -22,16 +21,7 @@ public class postac : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pausebool == true)
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                pause.SetActive(true);
-                contro.stop = true;
-                zatrzymanieruchu.stopmove = false;
-                pausebool = false;
-                Debug.Log("Otworzenie pauzy");
-                Time.timeScale = 0;
-            }   
+
     }
 
     void OnCollisionEnter2D(Collision2D Niemozebyc)
