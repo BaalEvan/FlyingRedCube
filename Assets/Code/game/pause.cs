@@ -3,7 +3,6 @@ using System.Collections;
 
 public class pause : MonoBehaviour {
     public SpawnController contro;
-    public postac pauza;
     public figurki zatrzymanieruchu;
     public pause pauzaa;
     public bool pausebool = true;

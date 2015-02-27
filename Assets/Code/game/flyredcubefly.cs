@@ -33,9 +33,9 @@ public class flyredcubefly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-						if (!dead)
-						if (clicked)
-								postac.rigidbody2D.AddForceAtPosition (new Vector2 (0, 60f), new Vector2 (0, 45f));
+		if (!dead)
+			if (clicked)
+			postac.rigidbody2D.AddForceAtPosition (new Vector2 (0, 60f), new Vector2 (0, 45f));
 
 		if (dead) {
 			gameObject.SetActive(false);

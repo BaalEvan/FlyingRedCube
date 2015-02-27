@@ -3,8 +3,7 @@ using System.Collections;
 
 public class pausestart : MonoBehaviour
 {
-    public GameObject kurwa;
-    public pause zadzialaj;
+    public GameObject pauza;
     public pause pauzaa;
 
     // Use this for initialization
@@ -19,15 +18,14 @@ public class pausestart : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-
-            kurwa.SetActive(true);
-            zadzialaj.pausebool = true;
+            pauza.SetActive(true);
+            pauzaa.pausebool = true;
         }
 
         else
         {
-            kurwa.SetActive(false);
-            zadzialaj.pausebool = false;
+            pauza.SetActive(false);
+            pauzaa.pausebool = false;
         }
 
     }
