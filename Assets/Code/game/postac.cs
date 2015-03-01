@@ -9,6 +9,7 @@ public class postac : MonoBehaviour
     public SpawnController contro;
     public GameObject Timer;
     public GameObject pause;
+    public GameObject pausebtn;
     public figurki zatrzymanieruchu;
 
     public int Pkt = 0;
@@ -36,7 +37,7 @@ public class postac : MonoBehaviour
         {
             frcf.dead = true;
             contro.stop = true;
-
+            pausebtn.SetActive(false);
             gameover.SetActive(true);
             zatrzymanieruchu.stopmove = false;
 			Destroy (GetComponent<Animator>());
@@ -46,10 +47,12 @@ public class postac : MonoBehaviour
         }
         if (Niemozebyc.gameObject.tag == "ENEMY")
         {
+            pausebtn.SetActive(false);
             frcf.dead = true;
             contro.stop = true;
 
             gameover.SetActive(true);
+
             zatrzymanieruchu.stopmove = false;
 			Destroy (GetComponent<Animator>());
 

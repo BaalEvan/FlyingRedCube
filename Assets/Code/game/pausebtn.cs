@@ -2,11 +2,12 @@
 using System.Collections;
 
 public class pausebtn : MonoBehaviour {
-    public GameObject pause;
+    public GameObject pauza;
     public SpawnController contro;
     public figurki zatrzymanieruchu;
-    public pause pauzaa;
+    public pausestop pauzaa;
     public bool duzaglupota = true;
+    public GameObject flyredcube;
     // Use this for initialization
     void Start () {
 	
@@ -14,7 +15,6 @@ public class pausebtn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 
     void OnMouseDown()
@@ -22,23 +22,25 @@ public class pausebtn : MonoBehaviour {
         if (duzaglupota == true)
         {
             Debug.Log("Wcisniecie przycisku Pause");
-            pause.SetActive(true);
-            pauzaa.pausebool = true;
-            contro.stop = true;
-            zatrzymanieruchu.stopmovee = false;
+            pauza.SetActive(true);
+            flyredcube.SetActive(false);
+            //  zatrzymanieruchu.stopmovee = true;
             Debug.Log("Otworzenie pauzy");
             Time.timeScale = 0;
+            contro.stop = true;
+            pauzaa.pauzazatrzymanie = false;
             duzaglupota = false;
         }
         else
         {
             Debug.Log("Wcisniecie przycisku Pause");
-            pause.SetActive(false);
-            pauzaa.pausebool = false;
-            contro.stop = false;
-            zatrzymanieruchu.stopmovee = true;
-            Debug.Log("Otworzenie pauzy");
+            pauza.SetActive(false);
+            //   zatrzymanieruchu.stopmovee = false;
+            Debug.Log("Zamkniecie pauzy");
+            flyredcube.SetActive(true);
             Time.timeScale = 1;
+            contro.stop = false;
+            pauzaa.pauzazatrzymanie = true;
             duzaglupota = true;
         }
 

@@ -14,8 +14,7 @@ public class backtomenugame : MonoBehaviour {
 	}
 
 	void OnMouseDown () {
-		Application.LoadLevel ("Menu");
-		Time.timeScale = 1;
-		Debug.Log ("BackToMenuBTN");
+        Debug.Log("Back to menu");
+        Application.LoadLevel("Menu");
 	}
 }
