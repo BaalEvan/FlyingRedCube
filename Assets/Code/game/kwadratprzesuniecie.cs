@@ -5,7 +5,6 @@ public class kwadratprzesuniecie : MonoBehaviour
 {
     public bool rozpoczecie = false;
     public GameObject pausebtn;
-    public metry metry;
 
     // Use this for initialization
     void Start()
@@ -24,18 +23,15 @@ public class kwadratprzesuniecie : MonoBehaviour
     {
         if (!rozpoczecie)
         {
-            metry.metrybool = true;
             transform.position = new Vector3(transform.position.x - 0.07f, transform.position.y, transform.position.z);
             Time.timeScale = 1;
 
             StartCoroutine(pause());
         }
 
-        if (transform.position.x < -12f)
+        if (transform.position.x < -30f)
         {
             Destroy(this.gameObject);
         }
-
-
     }
 }

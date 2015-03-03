@@ -34,12 +34,13 @@ public class flyredcubefly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!dead)
-            if (clicked)
-            {
-                postac.rigidbody2D.AddForceAtPosition(new Vector2(0, 63f), new Vector2(0, 45f));
-            }
-		if (dead) {
+		if (!dead)
+			if (clicked)
+			postac.rigidbody2D.AddForceAtPosition (new Vector2 (0, 63f), new Vector2 (0, 45f));
+
+		if (dead)
+		{
+		    postac.SetActive(false);
 			gameObject.SetActive(false);
             punk.SetActive(false);
 				}
@@ -56,7 +57,7 @@ public class flyredcubefly : MonoBehaviour
             zatrzymanieruchu.stopmove = true;
             taptoplay.SetActive(false);
             punk.SetActive(true);
-
+           
             glupota = false;
         }
         clicked = true;
