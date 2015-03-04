@@ -14,7 +14,7 @@ public class Score : MonoBehaviour {
 	}
 	
 	void Update(){
-		guiText.text = "Score:" + pkt.ToString();
+		GetComponent<GUIText>().text = "Score:" + pkt.ToString();
 		//pkt = pkt;
 	}
 	

@@ -6,7 +6,7 @@ public class text : MonoBehaviour {
     public TextMesh tm;
 	// Use this for initialization
 	void Start () {
-        renderer.sortingOrder = 10;
+        GetComponent<Renderer>().sortingOrder = 10;
 	}
 	
 	// Update is called once per frame

@@ -31,8 +31,8 @@ public class highscore : MonoBehaviour
         ranks.Reverse();
         foreach (TextMesh r in ranks)
         {
-            r.renderer.sortingOrder = 5;
-            r.text = (scoreId+1).ToString() +". "+ PlayerPrefs.GetInt(scoreId + highScoreKey, 0).ToString();
+            r.GetComponent<Renderer>().sortingOrder = 5;
+            r.text =/* (scoreId+1).ToString() +". "+ */PlayerPrefs.GetInt(scoreId + highScoreKey, 0).ToString();
             scoreId--;
         }
 

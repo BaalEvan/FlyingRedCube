@@ -18,7 +18,7 @@ public class score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        guiText.text = "Score" + Flyredcubefly.Pkt.ToString();
+        GetComponent<GUIText>().text = "Score" + Flyredcubefly.Pkt.ToString();
         pkt = Flyredcubefly.Pkt;
     }
 
