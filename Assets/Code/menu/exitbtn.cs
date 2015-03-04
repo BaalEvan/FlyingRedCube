@@ -2,10 +2,6 @@
 using System.Collections;
 
 public class exitbtn : MonoBehaviour {
-    public GameObject exit;
-    public GameObject playbtn;
-    public GameObject stats;
-    public GameObject soud;
 	// Use this for initialization
 	void Start () {
 	
@@ -18,9 +14,6 @@ public class exitbtn : MonoBehaviour {
 
     void OnMouseDown()
     {
-        exit.SetActive(true);
-        playbtn.SetActive(false);
-        stats.SetActive(false);
-        soud.SetActive(false);
+        Application.LoadLevel("koniec");
     }
 }

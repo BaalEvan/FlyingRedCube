@@ -40,7 +40,6 @@ public class flyredcubefly : MonoBehaviour
 
 		if (dead)
 		{
-		    postac.SetActive(false);
 			gameObject.SetActive(false);
             punk.SetActive(false);
 				}
