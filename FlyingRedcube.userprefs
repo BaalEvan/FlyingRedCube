@@ -1,7 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\game\postac.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\menu\endGamebtn.cs">
     <Files>
+      <File FileName="Assets\Code\menu\endGamebtn.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\game\postac.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\game\backtomenugame.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\game\floorscript.cs" Line="1" Column="1" />

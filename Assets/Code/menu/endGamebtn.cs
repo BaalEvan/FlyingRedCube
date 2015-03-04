@@ -11,8 +11,8 @@ public class endGamebtn : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKeyDown (KeyCode.Escape)){
-            Application.Quit();
-            Debug.Log("ZamkniecieProgramu");
+            Application.LoadLevel("Menu");
+            Debug.Log("Powrot od menu");
         }
 	}
 
