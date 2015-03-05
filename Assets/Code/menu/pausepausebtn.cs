@@ -8,6 +8,7 @@ public class pausepausebtn : MonoBehaviour {
     public pausebtn pauzaa;
     public GameObject flyredcube;
     public pausebtn pauzaaaa;
+    public pausebool pauzabool;
     // Use this for initialization
     void Start () {
 	
@@ -25,7 +26,7 @@ public class pausepausebtn : MonoBehaviour {
         Debug.Log("Zamkniecie pauzy");
         Time.timeScale = 1;
         contro.stop = false;
-        pauzaaaa.pauzazatrzymanie = true;
+        pauzabool.pauzazatrzymanie = true;
         pauzaaaa.duzaglupota = true;
 
     }

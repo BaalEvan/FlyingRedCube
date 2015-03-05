@@ -30,8 +30,6 @@ public class score : MonoBehaviour
         {
             int score = PlayerPrefs.GetInt(i + "HighScore", 0);
             listawynikow.Add(score);
-           // if (score == 0)
-             //   PlayerPrefs.SetInt(i + highScoreKey, 0);
 
         }
 
@@ -41,16 +39,13 @@ public class score : MonoBehaviour
         {
             Debug.Log("saved");
             listawynikow.Add(Flyredcubefly.Pkt);
-            //PlayerPrefs.SetInt(highScorekey, Flyredcubefly.Pkt);
             listawynikow.Sort();
             listawynikow.Reverse();
 
             for (int i = 0; i < 5; i++)
             {
                 PlayerPrefs.SetInt(i + "HighScore", listawynikow[i]);
-                //listawynikow.Add(score);
-                // if (score == 0)
-                //   PlayerPrefs.SetInt(i + highScoreKey, 0);
+
 
             }
 

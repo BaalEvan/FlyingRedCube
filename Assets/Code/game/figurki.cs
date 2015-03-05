@@ -5,12 +5,12 @@ public class figurki: MonoBehaviour {
     public bool stopmove;
     public bool stopmovee;
     public flyredcubefly frcf;
-    public pausebtn pauzaa;
+    public pausebool pauzaa;
 
 	// Use this for initialization
 	void Start () {
             frcf = GameObject.Find("flyredcube").GetComponent<flyredcubefly>();
-            pauzaa = GameObject.Find("pausebtn").GetComponent<pausebtn>();
+            pauzaa = GameObject.Find("pausebool").GetComponent<pausebool>();
     }
 	
 	// Update is called once per frame

@@ -29,7 +29,7 @@ public class kwadratprzesuniecie : MonoBehaviour
             StartCoroutine(pause());
         }
 
-        if (transform.position.x < -30f)
+        if (transform.position.x < -12f)
         {
             Destroy(this.gameObject);
         }
