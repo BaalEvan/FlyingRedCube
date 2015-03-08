@@ -23,7 +23,7 @@ public class postac : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     void OnCollisionEnter2D(Collision2D Niemozebyc)
@@ -38,7 +38,6 @@ public class postac : MonoBehaviour
         {
             frcf.dead = true;
             contro.stop = true;
-            pausebtn.SetActive(false);
             gameover.SetActive(true);
             zatrzymanieruchu.stopmove = false;
             pktgo.SetActive(true);
@@ -48,8 +47,7 @@ public class postac : MonoBehaviour
             Debug.Log("kolizja z dolem");
         }
         if (Niemozebyc.gameObject.tag == "ENEMY")
-        {
-            pausebtn.SetActive(false);
+        { 
             frcf.dead = true;
             contro.stop = true;
             pktgo.SetActive(true);
@@ -69,7 +67,10 @@ public class postac : MonoBehaviour
             Pkt++;
             Timer.GetComponent<TextMesh>().text = Pkt.ToString();
             Destroy(other.gameObject);
+
         }
+
+
 
 
     }

@@ -15,6 +15,7 @@ public class flyredcubefly : MonoBehaviour
     public GameObject punk;
     public GameObject pausebtn;
     public bool glupota = true;
+    public bool pausebool = true;
 
     public int pkt=0;
 
@@ -34,17 +35,18 @@ public class flyredcubefly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (!dead)
-			if (clicked)
-			postac.GetComponent<Rigidbody2D>().AddForceAtPosition (new Vector2 (0, 63f), new Vector2 (0, 45f));
+        if (!dead)
+            if (clicked)
+                postac.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(0, 63f), new Vector2(0, 45f));
 
-		if (dead)
-		{
-			gameObject.SetActive(false);
+        if (dead)
+        {
+            gameObject.SetActive(false);
             punk.SetActive(false);
-				}
+            pausebool = false;
+        }
 
-		}
+    }
 
     void OnMouseDown()
     {

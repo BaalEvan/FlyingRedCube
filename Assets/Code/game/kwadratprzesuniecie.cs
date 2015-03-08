@@ -9,13 +9,13 @@ public class kwadratprzesuniecie : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        Time.timeScale = 0;
     }
 
     IEnumerator pause()
     {
-        yield return new WaitForSeconds(1.6f);
-        pausebtn.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+
     }
 
     // Update is called once per frame
@@ -25,12 +25,13 @@ public class kwadratprzesuniecie : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x - 0.07f, transform.position.y, transform.position.z);
             Time.timeScale = 1;
-
             StartCoroutine(pause());
+
         }
 
         if (transform.position.x < -12f)
         {
+            pausebtn.SetActive(true);
             Destroy(this.gameObject);
         }
     }
