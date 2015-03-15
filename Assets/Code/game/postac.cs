@@ -12,7 +12,6 @@ public class postac : MonoBehaviour
     public GameObject pausebtn;
     public figurki zatrzymanieruchu;
     public GameObject pktgo;
-
     public int Pkt = 0;
 
     void Start()
@@ -41,7 +40,8 @@ public class postac : MonoBehaviour
             gameover.SetActive(true);
             zatrzymanieruchu.stopmove = false;
             pktgo.SetActive(true);
-			Destroy (GetComponent<Animator>());
+            Destroy(GetComponent<Animator>());
+
 
 
             Debug.Log("kolizja z dolem");
@@ -53,7 +53,6 @@ public class postac : MonoBehaviour
             pktgo.SetActive(true);
 
             gameover.SetActive(true);
-
             zatrzymanieruchu.stopmove = false;
 			Destroy (GetComponent<Animator>());
 

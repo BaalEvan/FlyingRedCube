@@ -17,6 +17,7 @@ public class flyredcubefly : MonoBehaviour
     public bool glupota = true;
     public bool pausebool = true;
 
+
     public int pkt=0;
 
     //public postac pScript;
@@ -58,7 +59,6 @@ public class flyredcubefly : MonoBehaviour
             zatrzymanieruchu.stopmove = true;
             taptoplay.SetActive(false);
             punk.SetActive(true);
-           
             glupota = false;
         }
         clicked = true;
