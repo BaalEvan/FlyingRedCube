@@ -13,6 +13,10 @@ public class postac : MonoBehaviour
     public figurki zatrzymanieruchu;
     public GameObject pktgo;
     public int Pkt = 0;
+    public GameObject sciemnianie1;
+    public GameObject sciemnianie2;
+    public GameObject sciemnianie3;
+    public GameObject sciemnianie4;
 
     void Start()
     {
@@ -54,7 +58,8 @@ public class postac : MonoBehaviour
 
             gameover.SetActive(true);
             zatrzymanieruchu.stopmove = false;
-			Destroy (GetComponent<Animator>());
+            Destroy(GetComponent<Animator>());
+
 
         }
     }
@@ -66,6 +71,31 @@ public class postac : MonoBehaviour
             Pkt++;
             Timer.GetComponent<TextMesh>().text = Pkt.ToString();
             Destroy(other.gameObject);
+            if (Pkt >= 25)
+            {
+                sciemnianie1.SetActive(true);
+                if (Pkt >= 50)
+                {
+                    sciemnianie1.SetActive(false);
+                    sciemnianie2.SetActive(true);
+                    if (Pkt >= 100)
+                    {
+                        sciemnianie2.SetActive(false);
+                        sciemnianie3.SetActive(true);
+                    }
+                    if (Pkt >= 200)
+                    {
+                        sciemnianie3.SetActive(false);
+                        sciemnianie4.SetActive(true);
+                        if (Pkt >= 400)
+                        {
+                            sciemnianie1.SetActive(true);
+                            sciemnianie4.SetActive(true);
+                        }
+                    }
+                }
+
+            }
 
         }
 
