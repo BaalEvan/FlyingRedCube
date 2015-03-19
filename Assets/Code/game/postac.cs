@@ -72,6 +72,7 @@ public class postac : MonoBehaviour
     {
         if (other.gameObject.tag == "coin")
         {
+            GetComponent<AudioSource>().Play();
             Pkt++;
             Timer.GetComponent<TextMesh>().text = Pkt.ToString();
             Destroy(other.gameObject);
