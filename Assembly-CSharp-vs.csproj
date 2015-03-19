@@ -46,17 +46,21 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Code\game\GlobalController.cs" />
      <Compile Include="Assets\Code\game\SpawnController.cs" />
      <Compile Include="Assets\Code\game\backtomenugame.cs" />
      <Compile Include="Assets\Code\game\figurki.cs" />
      <Compile Include="Assets\Code\game\floorscript.cs" />
      <Compile Include="Assets\Code\game\flyredcubefly.cs" />
      <Compile Include="Assets\Code\game\kwadratprzesuniecie.cs" />
+     <Compile Include="Assets\Code\game\pausebool.cs" />
      <Compile Include="Assets\Code\game\pausebtn.cs" />
      <Compile Include="Assets\Code\game\playagainbtn.cs" />
      <Compile Include="Assets\Code\game\postac.cs" />
      <Compile Include="Assets\Code\game\rank.cs" />
+     <Compile Include="Assets\Code\game\returnbtnpause.cs" />
      <Compile Include="Assets\Code\game\score.cs" />
+     <Compile Include="Assets\Code\game\soundstoponstart.cs" />
      <Compile Include="Assets\Code\game\startplayfrompause.cs" />
      <Compile Include="Assets\Code\game\text.cs" />
      <Compile Include="Assets\Code\game\text2.cs" />
@@ -70,11 +74,20 @@
      <Compile Include="Assets\Code\menu\playbtn.cs" />
      <Compile Include="Assets\Code\menu\rekordybtn.cs" />
      <Compile Include="Assets\Code\menu\soundbtn.cs" />
+     <Compile Include="Assets\Code\menu\sounddontdestroy.cs" />
+     <Compile Include="Assets\Code\menu\soundgame.cs" />
+     <Compile Include="Assets\Code\menu\textmenu.cs" />
+     <Compile Include="Assets\Code\menu\wardrobebtn.cs" />
      <Compile Include="Assets\Code\rekordy\backtomenubtn.cs" />
      <Compile Include="Assets\Code\rekordy\highscore.cs" />
-     <Compile Include="Assets\backtomenubtnpause.cs" />
-     <Compile Include="Assets\pausebool.cs" />
-     <Compile Include="Assets\returnbtnpause.cs" />
+     <Compile Include="Assets\Code\shop\backtomenubtnpause.cs" />
+     <Compile Include="Assets\Code\shop\closeembtn.cs" />
+     <Compile Include="Assets\Code\shop\outfit1.cs" />
+     <Compile Include="Assets\Code\shop\outfit2.cs" />
+     <Compile Include="Assets\Code\shop\outfit3.cs" />
+     <Compile Include="Assets\Code\shop\outfit4.cs" />
+     <Compile Include="Assets\Code\shop\outfit5.cs" />
+     <Compile Include="Assets\Code\shop\outfit6.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>d:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -17,6 +17,7 @@ public class gotorecordbtn : MonoBehaviour
 
 	void OnMouseDown ()
 	{
+
         Application.LoadLevel ("rekordy");
         Time.timeScale = 0;
 
