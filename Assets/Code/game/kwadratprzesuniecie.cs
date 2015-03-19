@@ -6,10 +6,13 @@ public class kwadratprzesuniecie : MonoBehaviour
     public bool rozpoczecie = false;
     public GameObject pausebtn;
 
+
     // Use this for initialization
     void Start()
     {
+
         Time.timeScale = 0;
+
     }
 
     IEnumerator pause()
@@ -28,6 +31,7 @@ public class kwadratprzesuniecie : MonoBehaviour
             StartCoroutine(pause());
 
         }
+
 
         if (transform.position.x < -12f)
         {

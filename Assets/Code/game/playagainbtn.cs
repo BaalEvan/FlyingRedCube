@@ -3,10 +3,11 @@ using System.Collections;
 
 public class playagainbtn : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+
+    // Use this for initialization
+    void Start () {
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -14,8 +15,10 @@ public class playagainbtn : MonoBehaviour {
 	}
 	void OnMouseDown ()
 	{
-		Application.LoadLevel ("game");
+
+        Application.LoadLevel ("game");
 		Time.timeScale = 1;
-		Debug.Log ("againBTN");
-	}
+        Debug.Log("againBTN");
+
+    }
 }

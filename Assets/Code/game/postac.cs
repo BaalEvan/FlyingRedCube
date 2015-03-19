@@ -17,20 +17,25 @@ public class postac : MonoBehaviour
     public GameObject sciemnianie2;
     public GameObject sciemnianie3;
     public GameObject sciemnianie4;
+    public GameObject gamesound;
+    public GameObject zonk;
 
-    void Start()
+
+    private void Start()
     {
 
     }
+
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+
     }
 
-    void OnCollisionEnter2D(Collision2D Niemozebyc)
+    private void OnCollisionEnter2D(Collision2D Niemozebyc)
     {
+
         if (Niemozebyc.gameObject.tag == "WallUp")
         {
 
@@ -44,14 +49,13 @@ public class postac : MonoBehaviour
             gameover.SetActive(true);
             zatrzymanieruchu.stopmove = false;
             pktgo.SetActive(true);
+            gamesound.SetActive(false);
             Destroy(GetComponent<Animator>());
-
-
-
+            zonk.SetActive(true);
             Debug.Log("kolizja z dolem");
         }
         if (Niemozebyc.gameObject.tag == "ENEMY")
-        { 
+        {
             frcf.dead = true;
             contro.stop = true;
             pktgo.SetActive(true);
@@ -59,19 +63,25 @@ public class postac : MonoBehaviour
             gameover.SetActive(true);
             zatrzymanieruchu.stopmove = false;
             Destroy(GetComponent<Animator>());
-
-
+            gamesound.SetActive(false);
+            zonk.SetActive(true);
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "coin")
         {
             Pkt++;
             Timer.GetComponent<TextMesh>().text = Pkt.ToString();
             Destroy(other.gameObject);
-            if (Pkt >= 25)
+
+                int x = PlayerPrefs.GetInt("punktacja", 0) + 1;
+                PlayerPrefs.SetInt("punktacja", x);
+                Debug.Log("uzbierałeś razem: " + x + "punktów");
+            
+
+            if (Pkt >= 20)
             {
                 sciemnianie1.SetActive(true);
                 if (Pkt >= 50)
@@ -83,11 +93,11 @@ public class postac : MonoBehaviour
                         sciemnianie2.SetActive(false);
                         sciemnianie3.SetActive(true);
                     }
-                    if (Pkt >= 200)
+                    if (Pkt >= 150)
                     {
                         sciemnianie3.SetActive(false);
                         sciemnianie4.SetActive(true);
-                        if (Pkt >= 400)
+                        if (Pkt >= 250)
                         {
                             sciemnianie1.SetActive(true);
                             sciemnianie4.SetActive(true);

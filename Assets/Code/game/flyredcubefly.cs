@@ -13,9 +13,12 @@ public class flyredcubefly : MonoBehaviour
     public figurki zatrzymanieruchu;
     public GameObject taptoplay;
     public GameObject punk;
+    public GameObject gamesound;
     public GameObject pausebtn;
+    public GameObject jump;
     public bool glupota = true;
     public bool pausebool = true;
+
 
 
     public int pkt=0;
@@ -28,17 +31,25 @@ public class flyredcubefly : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
         kwadratstart.rozpoczecie = true;
         contro.stop = true;
         zatrzymanieruchu.stopmove = false;
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
+
+
         if (!dead)
             if (clicked)
+            {
                 postac.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(0, 63f), new Vector2(0, 45f));
+
+            }
 
         if (dead)
         {
@@ -60,6 +71,7 @@ public class flyredcubefly : MonoBehaviour
             taptoplay.SetActive(false);
             punk.SetActive(true);
             glupota = false;
+            gamesound.SetActive(true);
         }
         clicked = true;
     }

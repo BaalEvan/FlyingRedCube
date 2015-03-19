@@ -1,20 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class gotorecordbtn : MonoBehaviour {
+public class gotorecordbtn : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+
+    // Use this for initialization
+    void Start () {
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
 
-	void OnMouseDown () {
-		Application.LoadLevel ("rekordy");
-		Time.timeScale = 0;
-	}
+	void OnMouseDown ()
+	{
+        Application.LoadLevel ("rekordy");
+        Time.timeScale = 0;
+
+    }
 }
