@@ -15,9 +15,7 @@ public class outfit1 : MonoBehaviour {
     // Use this for initialization
     private void Start()
     {
-        int zestaw1 = PlayerPrefs.GetInt("outfit1", 0);
-
-        int zestawustawiony1 = PlayerPrefs.GetInt("outfit1", 0);
+        int zestawustawiony1 = PlayerPrefs.GetInt("setoutfit1", 1);
         if (zestawustawiony1 == 1)
         {
             set1.SetActive(true);

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class soundbtn : MonoBehaviour
+public class soundbtn : MenuButtonClass
 {
     public GameObject soundoff;
     public GameObject sound;
@@ -22,29 +22,29 @@ public class soundbtn : MonoBehaviour
             soundoff.SetActive(true);
             AudioListener.pause = true;
         }
+    }
+
+    void Update()
+    {
+    }
+
+    public override void OnMouseDown()
+    {
+        base.OnMouseDown();
+        if (dzwiekwlacz == false)
+        {
+            dzwiekwlacz = true;
+            soundoff.SetActive(true);
+            AudioListener.pause = true;
+            PlayerPrefs.SetInt("soundset", 1);
+
+        }
+        else
+        {
+            dzwiekwlacz = false;
+            AudioListener.pause = false;
+            soundoff.SetActive(false);
+            PlayerPrefs.SetInt("soundset", 0);
+        }
+    }
 }
-
-// Update is called once per frame
-void Update ()
-        {
-    }
-
-        void OnMouseDown ()
-        {
-            if (dzwiekwlacz == false)
-            {
-                dzwiekwlacz = true;
-                soundoff.SetActive(true);
-                AudioListener.pause = true;
-                PlayerPrefs.SetInt("soundset", 1);
-
-        }
-            else
-            {
-                dzwiekwlacz = false;
-                AudioListener.pause = false;
-                soundoff.SetActive(false);
-                PlayerPrefs.SetInt("soundset", 0);
-        }
-        }
-    }

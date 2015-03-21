@@ -1,21 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class infobtn : MonoBehaviour {
+public class infobtn : MenuButtonClass
+{
     public GameObject info;
     public bool check = true;
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
 
-    }
 
-    void OnMouseDown()
+    public override void OnMouseDown()
     {
+        base.OnMouseDown();
         if (check == true)
         {
             info.SetActive(true);

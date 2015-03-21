@@ -26,7 +26,7 @@ public class outfit5 : MonoBehaviour
         {
             owned4.SetActive(true);
         }
-        int zestawustawiony5 = PlayerPrefs.GetInt("outfit5", 0);
+        int zestawustawiony5 = PlayerPrefs.GetInt("setoutfit5", 0);
         if (zestawustawiony5 == 1)
         {
             set1.SetActive(false);

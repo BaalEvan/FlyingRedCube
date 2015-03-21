@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class pausepausebtn : MonoBehaviour {
+public class pausepausebtn : MenuButtonClass
+{
     public GameObject pauza;
     public SpawnController contro;
     public figurki zatrzymanieruchu;
@@ -9,17 +10,10 @@ public class pausepausebtn : MonoBehaviour {
     public GameObject flyredcube;
     public pausebtn pauzaaaa;
     public pausebool pauzabool;
-    // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-    void OnMouseDown()
+
+    public override void OnMouseDown()
     {
+        base.OnMouseDown();
         Debug.Log("Wcisniecie przycisku Pause");
         flyredcube.SetActive(true);
         pauza.SetActive(false);

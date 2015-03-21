@@ -1,23 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class nobtn : MonoBehaviour {
-    // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-				if (Input.GetKeyDown (KeyCode.Escape)) {
-						Application.LoadLevel ("Menu");
-						Debug.Log ("Powrot od menu");
-	
-				}
-		}
+public class nobtn : MenuButtonClass
+{
 
-    void OnMouseDown()
+    void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.LoadLevel("Menu");
+            Debug.Log("Powrot od menu");
+
+        }
+    }
+
+    public override void OnMouseDown()
+    {
+        base.OnMouseDown();
         Application.LoadLevel("Menu");
     }
 }

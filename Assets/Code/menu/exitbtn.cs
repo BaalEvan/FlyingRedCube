@@ -1,19 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class exitbtn : MonoBehaviour {
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-    void OnMouseDown()
+public class exitbtn : MenuButtonClass
+{
+    public override void OnMouseDown()
     {
+        base.OnMouseDown();
         Application.LoadLevel("koniec");
     }
 }

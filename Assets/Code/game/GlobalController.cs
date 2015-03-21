@@ -5,8 +5,10 @@ public class GlobalController : MonoBehaviour {
 
     public GlobalController GC;
     public sounddontdestroy SDD;
-	// Use this for initialization
-	void Awake () {
+    // Use this for initialization
+
+
+    void Awake () {
         GC = GameObject.Find("GlobalController").GetComponent<GlobalController>();
 
         DontDestroyOnLoad(this);

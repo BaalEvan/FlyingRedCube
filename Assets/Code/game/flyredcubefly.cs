@@ -4,8 +4,6 @@ using System.Collections;
 public class flyredcubefly : MonoBehaviour
 {
     public GameObject postac;
-
-
     public kwadratprzesuniecie kwadratstart;
 
     public flyredcubefly frcf;

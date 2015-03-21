@@ -7,6 +7,7 @@ public class sounddontdestroy : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        GetComponent<AudioSource>().Play();
 
         sdd = GameObject.Find("GlobalController").GetComponent<GlobalController>().SDD;
         if (sdd != null && sdd != this)
@@ -20,6 +21,6 @@ public class sounddontdestroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // DontDestroyOnLoad(this);
+        // DontDestroyOnLoad(this);
     }
 }

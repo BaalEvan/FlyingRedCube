@@ -1,24 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class playbtn : MonoBehaviour
+public class playbtn : MenuButtonClass
 {
+    public GameObject loading;
+    public GameObject dots;
 
-
-    // Use this for initialization
-    void Start ()
+    IEnumerator czas()
     {
-
+        yield return new WaitForSeconds(300f);
     }
-
-    // Update is called once per frame
-    void Update () {
-
+    public override void OnMouseDown()
+    {
+        dots.SetActive(true);
+        loading.SetActive(true);
+        base.OnMouseDown();
+        StartCoroutine(czas());
+        Application.LoadLevel("game");
     }
-
-	void OnMouseDown ()
-	{
-        GetComponent<AudioSource>().Play();
-		Application.LoadLevel("game");
-	}
 }

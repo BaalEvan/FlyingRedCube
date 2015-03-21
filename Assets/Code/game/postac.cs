@@ -20,12 +20,33 @@ public class postac : MonoBehaviour
     public GameObject gamesound;
     public GameObject zonk;
 
+    public Sprite[] ubrania;
+    public int selectedSkin;
+    public Sprite ActiveSprite;
+    public Sprite SecondSprite;
 
     private void Start()
     {
-
+        for (int i = 1; i <= 6; i++)
+        {
+            if (PlayerPrefs.GetInt("setoutfit" + i, 0) == 1)
+            {
+                ActiveSprite = ubrania[i];
+                GetComponent<SpriteRenderer>().sprite = ubrania[i];
+                selectedSkin = i;
+                break;
+            }
+        } 
     }
 
+    public void SetSkinA()
+    {
+        GetComponent<SpriteRenderer>().sprite = ActiveSprite;
+    }
+    public void SetSkinB()
+    {
+        GetComponent<SpriteRenderer>().sprite = SecondSprite;
+    }
 
     // Update is called once per frame
     private void Update()
