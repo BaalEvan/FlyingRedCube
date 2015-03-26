@@ -65,6 +65,7 @@
      <Compile Include="Assets\Code\game\text.cs" />
      <Compile Include="Assets\Code\game\text2.cs" />
      <Compile Include="Assets\Code\game\textcode.cs" />
+     <Compile Include="Assets\Code\menu\MenuButtonClass.cs" />
      <Compile Include="Assets\Code\menu\endGamebtn.cs" />
      <Compile Include="Assets\Code\menu\exitbtn.cs" />
      <Compile Include="Assets\Code\menu\gotorecordbtn.cs" />
@@ -88,6 +89,8 @@
      <Compile Include="Assets\Code\shop\outfit4.cs" />
      <Compile Include="Assets\Code\shop\outfit5.cs" />
      <Compile Include="Assets\Code\shop\outfit6.cs" />
+     <Compile Include="Assets\gameoverpoints.cs" />
+     <Compile Include="Assets\loadingscript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>d:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

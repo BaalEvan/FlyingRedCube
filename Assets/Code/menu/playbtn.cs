@@ -23,7 +23,7 @@ public class playbtn : MenuButtonClass
 
     IEnumerator czas()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.75f);
         Application.LoadLevel("game");
     }
 }

@@ -54,7 +54,7 @@ public class gameoverpoints : MonoBehaviour
 
     IEnumerator zwiekszaniepunktowczas()
     {
-        yield return new WaitForSeconds(3.2f);
+        yield return new WaitForSeconds(2f);
         StartCoroutine("odczekanie", 0.1f);
 
     }
