@@ -1,44 +1,62 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class gameoverpoints : MonoBehaviour
 {
     public TextMesh tmpunktacja;
     public postac frcf;
+    public int startpoints;
+    public int currentpoint=0;
+    public int zdobyte;
+    public int maxpoint;
 
 
+    public int mnoznik;
     void Start()
     {
         GetComponent<Renderer>().sortingOrder = 10;
+        Debug.Log("wtf");
+        startpoints = Convert.ToInt32( PlayerPrefs.GetInt("punktacja").ToString());
 
-        tmpunktacja.text = frcf.Pkt.ToString();
-        StartCoroutine(odczekanie());
+        maxpoint = startpoints;
+        zdobyte = Convert.ToInt32(frcf.Pkt.ToString());
+        startpoints -= zdobyte;
+        tmpunktacja.text = zdobyte.ToString();
+        mnoznik = maxpoint/100;
+        StartCoroutine("zwiekszaniepunktowczas");
 
     }
 
     void Update()
     {
-
+            
     }
 
-    IEnumerator odczekanie()
+    IEnumerator odczekanie(float time)
     {
         Debug.Log("waiting");
-        yield return new WaitForSeconds(5);
-        for (int i = 1; i >= frcf.Pkt; i++)
-        {
-            StartCoroutine("zwiekszaniepunktowczas");
-            int y = PlayerPrefs.GetInt("punktacja", 0) + 1;
-            PlayerPrefs.SetInt("punktacja", y);
-            tmpunktacja.text = PlayerPrefs.GetInt("punktacja").ToString();
-        }
+        yield return new WaitForSeconds(time);
         Debug.Log("wait end");
+        if (zdobyte < maxpoint)
+        {
+            if (zdobyte + mnoznik < maxpoint)
+                zdobyte += mnoznik;
+                    else
+            zdobyte++;
+            tmpunktacja.text = zdobyte.ToString();
+            Debug.Log(time);
+
+            StartCoroutine("odczekanie",time/1.1f);
+        }
 
     }
 
     IEnumerator zwiekszaniepunktowczas()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(3.2f);
+        StartCoroutine("odczekanie", 0.1f);
+
     }
 
 }

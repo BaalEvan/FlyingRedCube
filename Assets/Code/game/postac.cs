@@ -20,32 +20,63 @@ public class postac : MonoBehaviour
     public GameObject gamesound;
     public GameObject zonk;
 
-    public Sprite[] ubrania;
-    public int selectedSkin;
-    public Sprite ActiveSprite;
-    public Sprite SecondSprite;
+    public GameObject panda;
+    public GameObject mummy;
+    public GameObject rambo;
+    public GameObject ninja;
+    public GameObject gentleman;
 
     private void Start()
     {
-        for (int i = 1; i <= 6; i++)
+        if (PlayerPrefs.GetInt("setoutfit1", 0) == 1)
         {
-            if (PlayerPrefs.GetInt("setoutfit" + i, 0) == 1)
-            {
-                ActiveSprite = ubrania[i];
-                GetComponent<SpriteRenderer>().sprite = ubrania[i];
-                selectedSkin = i;
-                break;
-            }
-        } 
-    }
+            panda.SetActive(false);
+            mummy.SetActive(false);
+            rambo.SetActive(false);
+            ninja.SetActive(false);
+            gentleman.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("setoutfit2", 0) == 1)
+        {
+            panda.SetActive(true);
+            mummy.SetActive(false);
+            rambo.SetActive(false);
+            ninja.SetActive(false);
+            gentleman.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("setoutfit3", 0) == 1)
+        {
+            panda.SetActive(false);
+            mummy.SetActive(true);
+            rambo.SetActive(false);
+            ninja.SetActive(false);
+            gentleman.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("setoutfit4", 0) == 1)
+        {
+            panda.SetActive(false);
+            mummy.SetActive(false);
+            rambo.SetActive(true);
+            ninja.SetActive(false);
+            gentleman.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("setoutfit5", 0) == 1)
+        {
+            panda.SetActive(false);
+            mummy.SetActive(false);
+            rambo.SetActive(false);
+            ninja.SetActive(true);
+            gentleman.SetActive(false);
+        }
+        if (PlayerPrefs.GetInt("setoutfit6", 0) == 1)
+        {
+            panda.SetActive(false);
+            mummy.SetActive(false);
+            rambo.SetActive(false);
+            ninja.SetActive(false);
+            gentleman.SetActive(true);
+        }
 
-    public void SetSkinA()
-    {
-        GetComponent<SpriteRenderer>().sprite = ActiveSprite;
-    }
-    public void SetSkinB()
-    {
-        GetComponent<SpriteRenderer>().sprite = SecondSprite;
     }
 
     // Update is called once per frame
