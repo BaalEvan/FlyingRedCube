@@ -10,17 +10,17 @@ public class backtomenubtn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            Application.LoadLevel("menu");
+        //if(Input.GetKeyDown(KeyCode.Escape)){
+        //    Application.LoadLevel("menu");
 
-        }
+     //   }
 	}
 
     
 	void OnMouseDown(){
 
         Application.LoadLevel ("menu");
-        Debug.Log("menu");
+      //  Debug.Log("menu");
 
     }
 }

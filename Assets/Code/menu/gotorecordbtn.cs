@@ -13,7 +13,7 @@ public class gotorecordbtn : MenuButtonClass
         base.OnMouseDown();
       //  GetComponent<AudioSource>().Play();
         Application.LoadLevel ("rekordy");
-        Time.timeScale = 0;
+    //    Time.timeScale = 0;
 
     }
 }

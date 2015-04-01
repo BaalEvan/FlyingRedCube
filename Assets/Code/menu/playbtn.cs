@@ -15,7 +15,7 @@ public class playbtn : MenuButtonClass
 
     void Start()
     {
-        DontDestroyOnLoad(loading);
+     //   DontDestroyOnLoad(loading);
     }
 
     public override void OnMouseDown()
