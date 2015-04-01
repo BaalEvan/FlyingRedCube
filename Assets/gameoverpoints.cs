@@ -10,12 +10,13 @@ public class gameoverpoints : MonoBehaviour
     public int currentpoint=0;
     public int zdobyte;
     public int maxpoint;
+    public clicktoshowpoints ctsp;
 
 
     public int mnoznik;
     void Start()
     {
-        GetComponent<Renderer>().sortingOrder = 10;
+        //GetComponent<Renderer>().sortingOrder = 10;
         Debug.Log("wtf");
         startpoints = Convert.ToInt32( PlayerPrefs.GetInt("punktacja").ToString());
 
@@ -35,19 +36,22 @@ public class gameoverpoints : MonoBehaviour
 
     IEnumerator odczekanie(float time)
     {
-        Debug.Log("waiting");
-        yield return new WaitForSeconds(time);
-        Debug.Log("wait end");
-        if (zdobyte < maxpoint)
-        {
-            if (zdobyte + mnoznik < maxpoint)
-                zdobyte += mnoznik;
-                    else
-            zdobyte++;
-            tmpunktacja.text = zdobyte.ToString();
-            Debug.Log(time);
+        //if (ctsp.presspointbutton == true)
+        //{
+            Debug.Log("waiting");
+            yield return new WaitForSeconds(time);
+            Debug.Log("wait end");
+            if (zdobyte < maxpoint)
+            {
+                if (zdobyte + mnoznik < maxpoint)
+                    zdobyte += mnoznik;
+                else
+                    zdobyte++;
+                tmpunktacja.text = zdobyte.ToString();
+                Debug.Log(time);
 
-            StartCoroutine("odczekanie",time/1.1f);
+                StartCoroutine("odczekanie", time/1.1f);
+           // }
         }
 
     }

@@ -100,7 +100,9 @@
     <Compile Include="Assets\Code\shop\outfit4.cs" />
     <Compile Include="Assets\Code\shop\outfit5.cs" />
     <Compile Include="Assets\Code\shop\outfit6.cs" />
+    <Compile Include="Assets\clicktoshowpoints.cs" />
     <Compile Include="Assets\gameoverpoints.cs" />
+    <Compile Include="Assets\gameoverpoints2.cs" />
     <Compile Include="Assets\loadingscript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

@@ -20,6 +20,7 @@ public class postac : MonoBehaviour
     public GameObject gamesound;
     public GameObject zonk;
 
+	public GameObject baza;
     public GameObject panda;
     public GameObject mummy;
     public GameObject rambo;
@@ -30,6 +31,7 @@ public class postac : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("setoutfit1", 0) == 1)
         {
+			baza.SetActive(true);
             panda.SetActive(false);
             mummy.SetActive(false);
             rambo.SetActive(false);
@@ -38,6 +40,7 @@ public class postac : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("setoutfit2", 0) == 1)
         {
+			baza.SetActive(false);
             panda.SetActive(true);
             mummy.SetActive(false);
             rambo.SetActive(false);
@@ -46,6 +49,7 @@ public class postac : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("setoutfit3", 0) == 1)
         {
+			baza.SetActive(false);
             panda.SetActive(false);
             mummy.SetActive(true);
             rambo.SetActive(false);
@@ -54,6 +58,7 @@ public class postac : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("setoutfit4", 0) == 1)
         {
+			baza.SetActive(false);
             panda.SetActive(false);
             mummy.SetActive(false);
             rambo.SetActive(true);
@@ -62,6 +67,7 @@ public class postac : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("setoutfit5", 0) == 1)
         {
+			baza.SetActive(false);
             panda.SetActive(false);
             mummy.SetActive(false);
             rambo.SetActive(false);
@@ -70,6 +76,7 @@ public class postac : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("setoutfit6", 0) == 1)
         {
+			baza.SetActive(false);
             panda.SetActive(false);
             mummy.SetActive(false);
             rambo.SetActive(false);

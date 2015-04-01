@@ -14,6 +14,7 @@ public class flyredcubefly : MonoBehaviour
     public GameObject gamesound;
     public GameObject pausebtn;
     public GameObject jump;
+    public GameObject loading;
     public bool glupota = true;
     public bool pausebool = true;
 
@@ -29,7 +30,7 @@ public class flyredcubefly : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        loading = GameObject.FindWithTag("Loading");
         kwadratstart.rozpoczecie = true;
         contro.stop = true;
         zatrzymanieruchu.stopmove = false;
@@ -41,7 +42,7 @@ public class flyredcubefly : MonoBehaviour
     void Update()
     {
 
-
+        DestroyObject(loading);
         if (!dead)
             if (clicked)
             {

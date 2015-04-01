@@ -21,6 +21,6 @@ public class sounddontdestroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // DontDestroyOnLoad(this);
+        
     }
 }
