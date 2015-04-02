@@ -4,26 +4,24 @@ using System.Collections;
 public class clicktoshowpoints : MonoBehaviour
 {
     public TextMesh tmpunktacja;
-    public GameObject gop;
-    public bool presspointbutton = true;
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	    if (presspointbutton == false)
-	    {
-            tmpunktacja.text = PlayerPrefs.GetInt("punktacja").ToString();
-        }
-	}
-
-    void OnMouseDown()
+    public text2 tekst;
+    // Use this for initialization
+    private void Start()
     {
-        if(presspointbutton == true) {
+
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
+    }
+
+    private void OnMouseDown()
+    {
+        if(tekst.punktyposmierci == true)
         tmpunktacja.text = PlayerPrefs.GetInt("punktacja").ToString();
-        presspointbutton = false;
-        }
+        Debug.Log("punktacja");
+        //tekst.punktyposmierci = false;
+
     }
 }
