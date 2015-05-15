@@ -34,8 +34,8 @@ public class SlotMachineController : MonoBehaviour
     {
         int x = Random.Range(0, 100);
         int SadRandomMoney = Random.Range(0, 15);
-        int RandomMoney = Random.Range(15, 300);
-        int BonusRandomMoney = Random.Range(301, 600);
+        int RandomMoney = Random.Range(15, 250);
+        int BonusRandomMoney = Random.Range(251, 500);
         int zero = 0;
 
         Debug.Log("SLOT!");
@@ -52,16 +52,16 @@ public class SlotMachineController : MonoBehaviour
 
         // Losowanie
         else {
-            // Szansa 40% - Pusty traf
-            if (x <= 40) 
+            // Szansa 45% - Pusty traf
+            if (x <= 45) 
         {
             int stankonta = PlayerPrefs.GetInt("punktacja", 0) + SadRandomMoney;
             PlayerPrefs.SetInt("Stan", stankonta);
             tmSlotMachine.text = SadRandomMoney.ToString();
             Debug.Log("Pusty traf");
         }
-        // Szansa 57% - Pieniążki
-            if (x > 40 && x < 94)
+        // Szansa 52% - Pieniążki
+            if (x > 45 && x < 94)
         {
 
             int stankonta = PlayerPrefs.GetInt("punktacja", 0) + RandomMoney;
