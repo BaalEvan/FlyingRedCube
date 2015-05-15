@@ -25,22 +25,6 @@ public class outfit2 : MonoBehaviour {
         {
             owned1.SetActive(true);
         }
-        int zestawustawiony2 = PlayerPrefs.GetInt("setoutfit2", 0);
-        if (zestawustawiony2 == 1)
-        {
-            set1.SetActive(false);
-            PlayerPrefs.SetInt("setoutfit1", 0);
-            set2.SetActive(true);
-            PlayerPrefs.SetInt("setoutfit2", 1);
-            set3.SetActive(false);
-            PlayerPrefs.SetInt("setoutfit3", 0);
-            set4.SetActive(false);
-            PlayerPrefs.SetInt("setoutfit4", 0);
-            set5.SetActive(false);
-            PlayerPrefs.SetInt("setoutfit5", 0);
-            set6.SetActive(false);
-            PlayerPrefs.SetInt("setoutfit6", 0);
-        }
     }
 	
 	// Update is called once per frame

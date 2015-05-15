@@ -12,7 +12,6 @@ public class postac : MonoBehaviour
     public GameObject pausebtn;
     public figurki zatrzymanieruchu;
     public GameObject pktgo;
-    public int Pkt = 0;
     public GameObject sciemnianie1;
     public GameObject sciemnianie2;
     public GameObject sciemnianie3;
@@ -26,9 +25,14 @@ public class postac : MonoBehaviour
     public GameObject rambo;
     public GameObject ninja;
     public GameObject gentleman;
+    public Animation skrzydla;
+
+    public int Pkt = 0;
+    public int Figure3Life = 2;
 
     private void Start()
     {
+       
         if (PlayerPrefs.GetInt("setoutfit1", 0) == 1)
         {
 			baza.SetActive(true);
@@ -89,7 +93,12 @@ public class postac : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+    }
 
+    IEnumerator FigureHit()
+    {
+        Figure3Life = Figure3Life - 1;
+        yield return new WaitForSeconds(0.1f);
     }
 
     private void OnCollisionEnter2D(Collision2D Niemozebyc)
@@ -115,15 +124,33 @@ public class postac : MonoBehaviour
         }
         if (Niemozebyc.gameObject.tag == "ENEMY")
         {
-            frcf.dead = true;
-            contro.stop = true;
-            pktgo.SetActive(true);
+            if (PlayerPrefs.GetInt("setfigure3") == 1)
+            {
+                StartCoroutine(FigureHit());
+                if (Figure3Life == 0)
+                {
+                    frcf.dead = true;
+                    contro.stop = true;
+                    pktgo.SetActive(true);
 
-            gameover.SetActive(true);
-            zatrzymanieruchu.stopmove = false;
-            Destroy(GetComponent<Animator>());
-            gamesound.SetActive(false);
-            zonk.SetActive(true);
+                    gameover.SetActive(true);
+                    zatrzymanieruchu.stopmove = false;
+                    Destroy(GetComponent<Animator>());
+                    gamesound.SetActive(false);
+                    zonk.SetActive(true);
+                }
+            }
+            else 
+            {
+                frcf.dead = true;
+                contro.stop = true;
+                pktgo.SetActive(true);
+                gameover.SetActive(true);
+                zatrzymanieruchu.stopmove = false;
+                Destroy(GetComponent<Animator>());
+                gamesound.SetActive(false);
+                zonk.SetActive(true);
+            }
         }
     }
 

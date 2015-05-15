@@ -5,7 +5,7 @@ public class textmenu : MonoBehaviour
 {
     public TextMesh tmpunktacja;
 
-    void Start()
+    void Update()
     {
         GetComponent<Renderer>().sortingOrder = 10;
         tmpunktacja.text = PlayerPrefs.GetInt("punktacja").ToString();

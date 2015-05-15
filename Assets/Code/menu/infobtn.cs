@@ -9,16 +9,6 @@ public class infobtn : MenuButtonClass
 
     public override void OnMouseDown()
     {
-        base.OnMouseDown();
-        if (check == true)
-        {
-            info.SetActive(true);
-            check = false;
-        }
-        else
-        {
-            check = true;
-            info.SetActive(false);
-        }
+        Application.LoadLevel("loteria");
     }
 }

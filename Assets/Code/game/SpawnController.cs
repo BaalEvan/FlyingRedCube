@@ -6,13 +6,45 @@ public class SpawnController : MonoBehaviour {
 	// Use this for initialization
     public List<GameObject> PrefabsList;
     public List<Transform> PositionList;
-    public float time = 0f;
+
     public GameObject FigurkiPrefabGameObject;
+
+    public float time = 0f;
     public float SpawnTime;
     public bool stop;
+
+    public int x = 0;
+    public int y = 1;
+    public int z = 2;
+    public int p = 3;
+
+
 	void Start ()
 	{
-	    time = 0f; // zapytac Bartka
+	    if (PlayerPrefs.GetInt("setfigure1") == 1)
+	    {
+	        x = 0;
+	        y = 1;
+	        z = 2;
+	        p = 3;
+	    }
+
+        if (PlayerPrefs.GetInt("setfigure2") == 1)
+        {
+            x = 4;
+            y = 5;
+            z = 6;
+            p = 7;
+        }
+
+	    if (PlayerPrefs.GetInt("setfigure3") == 1)
+	    {
+            x = 8;
+	        y = 9;
+            z = 10;
+            p = 11;
+	    }
+
 	}
 
     // Update is called once per frame
@@ -25,16 +57,16 @@ public class SpawnController : MonoBehaviour {
 
             {
                 time = 0f;
-                var money = Random.Range(0, 3);
+                var money = Random.Range(x, p);
                 GameObject parent = Instantiate(FigurkiPrefabGameObject, new Vector2(0f, 0f), new Quaternion(0, 0, 0, 0)) as GameObject;
-                int[] generator = new int[3];
-                generator[0] = Random.Range(0, 3);
-                generator[1] = Random.Range(0, 3);
-                generator[2] = Random.Range(0, 3);
-                generator[money] = 3;
-                GameObject a = Instantiate(PrefabsList[generator[0]], PositionList[0].localPosition, new Quaternion(0, 0, 0, 0)) as GameObject;
-                GameObject b = Instantiate(PrefabsList[generator[1]], PositionList[1].localPosition, new Quaternion(0, 0, 0, 0)) as GameObject;
-                GameObject c = Instantiate(PrefabsList[generator[2]], PositionList[2].localPosition, new Quaternion(0, 0, 0, 0)) as GameObject;
+                int[] generator = new int[12];
+                generator[x] = Random.Range(x, p);
+                generator[y] = Random.Range(x, p);
+                generator[z] = Random.Range(x, p);
+                generator[money] = p;
+                GameObject a = Instantiate(PrefabsList[generator[x]], PositionList[0].localPosition, new Quaternion(0, 0, 0, 0)) as GameObject;
+                GameObject b = Instantiate(PrefabsList[generator[y]], PositionList[1].localPosition, new Quaternion(0, 0, 0, 0)) as GameObject;
+                GameObject c = Instantiate(PrefabsList[generator[z]], PositionList[2].localPosition, new Quaternion(0, 0, 0, 0)) as GameObject;
 
                 a.transform.parent = parent.transform;
                 b.transform.parent = parent.transform;
