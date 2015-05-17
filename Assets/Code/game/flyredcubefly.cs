@@ -47,6 +47,7 @@ public class flyredcubefly : MonoBehaviour
             if (clicked)
             {
                 postac.GetComponent<Rigidbody2D>().AddForceAtPosition(new Vector2(0, 63f), new Vector2(0, 45f));
+
             }
         if (!clicked)
         {
