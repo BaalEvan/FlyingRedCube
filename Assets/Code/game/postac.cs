@@ -19,6 +19,11 @@ public class postac : MonoBehaviour
     public GameObject gamesound;
     public GameObject zonk;
 
+    public GameObject lifeAll;
+    public GameObject life1;
+    public GameObject life2;
+    public GameObject life3;
+
 	public GameObject baza;
     public GameObject panda;
     public GameObject mummy;
@@ -28,11 +33,27 @@ public class postac : MonoBehaviour
     public Animation skrzydla;
 
     public int Pkt = 0;
-    public int Figure3Life = 2;
+    public int FigureLife;
 
     private void Start()
     {
+        // Life
+
+        if (PlayerPrefs.GetInt("setfigure2") == 1)
+        {
+            life2.SetActive(true);
+            FigureLife = 2;
+        }
+
+        if (PlayerPrefs.GetInt("setfigure3") == 1)
+        {
+            life1.SetActive(true);
+            life2.SetActive(true);
+            FigureLife = 3;
+        }
        
+
+        // Outfit
         if (PlayerPrefs.GetInt("setoutfit1", 0) == 1)
         {
 			baza.SetActive(true);
@@ -93,11 +114,23 @@ public class postac : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (FigureLife == 0)
+        {
+            life3.SetActive(false);
+        }
+        if (FigureLife == 1)
+        {
+            life2.SetActive(false);
+        }
+        if (FigureLife == 2)
+        {
+            life1.SetActive(false);
+        }
     }
 
     IEnumerator FigureHit()
     {
-        Figure3Life = Figure3Life - 1;
+        FigureLife = FigureLife - 1;
         yield return new WaitForSeconds(0.1f);
     }
 
@@ -116,23 +149,25 @@ public class postac : MonoBehaviour
             contro.stop = true;
             gameover.SetActive(true);
             zatrzymanieruchu.stopmove = false;
+            lifeAll.SetActive(false);
             pktgo.SetActive(true);
             gamesound.SetActive(false);
             Destroy(GetComponent<Animator>());
             zonk.SetActive(true);
             Debug.Log("kolizja z dolem");
         }
+
         if (Niemozebyc.gameObject.tag == "ENEMY")
         {
-            if (PlayerPrefs.GetInt("setfigure3") == 1)
+
+            if (PlayerPrefs.GetInt("setfigure2") == 1)
             {
                 StartCoroutine(FigureHit());
-                if (Figure3Life == 0)
+                if (FigureLife == 0)
                 {
                     frcf.dead = true;
                     contro.stop = true;
                     pktgo.SetActive(true);
-
                     gameover.SetActive(true);
                     zatrzymanieruchu.stopmove = false;
                     Destroy(GetComponent<Animator>());
@@ -140,7 +175,24 @@ public class postac : MonoBehaviour
                     zonk.SetActive(true);
                 }
             }
-            else 
+
+            if (PlayerPrefs.GetInt("setfigure3") == 1)
+            {
+                StartCoroutine(FigureHit());
+                if (FigureLife == 0)
+                {
+                    frcf.dead = true;
+                    contro.stop = true;
+                    pktgo.SetActive(true);
+                    gameover.SetActive(true);
+                    zatrzymanieruchu.stopmove = false;
+                    Destroy(GetComponent<Animator>());
+                    gamesound.SetActive(false);
+                    zonk.SetActive(true);
+                }
+            }
+
+            if (PlayerPrefs.GetInt("setfigure1") == 1)
             {
                 frcf.dead = true;
                 contro.stop = true;

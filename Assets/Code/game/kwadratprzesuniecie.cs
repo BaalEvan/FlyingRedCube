@@ -5,7 +5,7 @@ public class kwadratprzesuniecie : MonoBehaviour
 {
     public bool rozpoczecie = false;
     public GameObject pausebtn;
-
+    public GameObject lifeAll;
 
     // Use this for initialization
     void Start()
@@ -35,6 +35,7 @@ public class kwadratprzesuniecie : MonoBehaviour
 
         if (transform.position.x < -12f)
         {
+            lifeAll.SetActive(true);
             pausebtn.SetActive(true);
             Destroy(this.gameObject);
         }
