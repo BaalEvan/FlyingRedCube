@@ -3,11 +3,13 @@ using System.Collections;
 
 public class skrzydlascript : MonoBehaviour
 {
+    private Animator anim;
     public flyredcubefly frcf;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+	    anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -16,5 +18,15 @@ public class skrzydlascript : MonoBehaviour
 	    {
             Destroy(GetComponent<Animator>());
         }
+
+	    if (frcf.clicked == true)
+	    {
+	        anim.speed = 3.5f;
+	    }
+
+	    else
+	    {
+	        anim.speed = 0;
+	    }
 	}
 }
