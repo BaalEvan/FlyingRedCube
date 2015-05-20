@@ -14,6 +14,8 @@ public class skrzydlascript : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
+
+       
 	    if (frcf.dead == true)
 	    {
             Destroy(GetComponent<Animator>());
@@ -21,12 +23,12 @@ public class skrzydlascript : MonoBehaviour
 
 	    if (frcf.clicked == true)
 	    {
-	        anim.speed = 3.5f;
+	        anim.speed = 3.25f;
 	    }
 
 	    else
 	    {
-	        anim.speed = 0;
+	        anim.Rebind();
 	    }
 	}
 }
