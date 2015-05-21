@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.FlyingRedCube.CSharp", "UnityVS.FlyingRedCube.CSharp.csproj", "{57D4B8C2-1A32-4E14-F834-69065DA46030}"
 EndProject
 Global
