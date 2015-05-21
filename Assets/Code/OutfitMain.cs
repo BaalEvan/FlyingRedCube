@@ -18,30 +18,30 @@ public class OutfitMain : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-	    int wyglad1 = PlayerPrefs.GetInt("outfit1", 1);
+	    int wyglad1 = PlayerPrefs.GetInt("outfit2", 0);
         if (wyglad1 == 1) {
             owned1.SetActive(true);
         }
 
-        int wyglad2 = PlayerPrefs.GetInt("outfit2", 0);
+        int wyglad2 = PlayerPrefs.GetInt("outfit3", 0);
         if (wyglad2 == 1)
         {
             owned1.SetActive(true);
         }
 
-        int wyglad3 = PlayerPrefs.GetInt("outfit3", 0);
+        int wyglad3 = PlayerPrefs.GetInt("outfit4", 0);
         if (wyglad3 == 1)
         {
             owned3.SetActive(true);
         }
 
-        int wyglad4 = PlayerPrefs.GetInt("outfit4", 0);
+        int wyglad4 = PlayerPrefs.GetInt("outfit5", 0);
         if (wyglad4 == 1)
         {
             owned4.SetActive(true);
         }
 
-        int wyglad5 = PlayerPrefs.GetInt("outfit5", 0);
+        int wyglad5 = PlayerPrefs.GetInt("outfit6", 0);
         if (wyglad5 == 1)
         {
             owned5.SetActive(true);

@@ -5,6 +5,7 @@ public class SlotMachine : MonoBehaviour
 {
 
     public Animator slot;
+    public GameObject Text;
     IEnumerator StopAnimation()
     {
         yield return new WaitForSeconds(5);
@@ -19,4 +20,9 @@ public class SlotMachine : MonoBehaviour
 	void Update () {
 	
 	}
+
+    public void AnimateText()
+    {
+     //   Text.SetActive(true);
+    }
 }

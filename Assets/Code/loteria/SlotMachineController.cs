@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 
 public class SlotMachineController : MonoBehaviour
 {
-    public int price = 100;
+    public int price;
 
     public GameObject outfit2;
     public GameObject outfit3;
@@ -20,82 +20,177 @@ public class SlotMachineController : MonoBehaviour
     public GameObject selectButton;
     public GameObject gotowardrobeButton;
 
-        // Use this for initialization
-	void Start () {
+    public BidScript bidbools;
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public bool slotsecond = false;
+    public bool outfit = false;
 
-    void OnMouseDown()
+    //Zmienne
+    public int srmlow;
+    public int srmhigh;
+    public int rmlow;
+    public int rmhigh;
+    public int brmlow;
+    public int brmhigh;
+
+
+    public IEnumerator SlotTimeMachine()
     {
+        tapstarttoslot.SetActive(false);
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(2);
+        slotmachinetext.gameObject.SetActive(true);
+        selectButton.SetActive(true);
+        //gameObject.SetActive(false);
+    }
+    
+    public void OnMouseDown()
+    {
+        var SM = GameObject.Find("Slotmachine");
+        var SMA = SM.GetComponent<Animator>();
+
+        if (bidbools.piec == true)
+        {
+            price = 50;
+            srmlow = 3;
+            srmhigh = 25;
+            rmlow = 25;
+            rmhigh = 125;
+            brmlow = 125;
+            brmhigh = 200;
+        }
+
+        if (bidbools.stobool == true)
+        {
+            price = 100;
+            srmlow = 3;
+            srmhigh = 50;
+            rmlow = 50;
+            rmhigh = 250;
+            brmlow = 251;
+            brmhigh = 400;
+        }
+
+        if (bidbools.dwie == true)
+        {
+            price = 200;
+            srmlow = 3;
+            srmhigh = 100;
+            rmlow = 101;
+            rmhigh = 500;
+            brmlow = 501;
+            brmhigh = 800;
+        }
+
         int x = Random.Range(0, 100);
-        int SadRandomMoney = Random.Range(0, 15);
-        int RandomMoney = Random.Range(15, 250);
-        int BonusRandomMoney = Random.Range(251, 500);
-        int zero = 0;
-
-        Debug.Log("SLOT!");
-
-        slotmachinetext.SetActive(true);
-
-        int punktacjaSM = PlayerPrefs.GetInt("punktacja", 0) - price;
-        PlayerPrefs.SetInt("punktacja", punktacjaSM);
+        int SadRandomMoney = Random.Range(srmlow, srmhigh);
+        int RandomMoney = Random.Range(rmlow, rmhigh);
+        int BonusRandomMoney = Random.Range(brmlow, brmhigh);
 
         if (PlayerPrefs.GetInt("punktacja") < price)
-            {
-                EM.SetActive(true);
-            }
+        {
+            slotmachinetext.SetActive(false);
+            EM.SetActive(true);
+
+        }
 
         // Losowanie
         else {
-            // Szansa 45% - Pusty traf
-            if (x <= 45) 
-        {
-            int stankonta = PlayerPrefs.GetInt("punktacja", 0) + SadRandomMoney;
-            PlayerPrefs.SetInt("Stan", stankonta);
-            tmSlotMachine.text = SadRandomMoney.ToString();
-            Debug.Log("Pusty traf");
-        }
-        // Szansa 52% - Pieniążki
-            if (x > 45 && x < 94)
-        {
+            
 
-            int stankonta = PlayerPrefs.GetInt("punktacja", 0) + RandomMoney;
-            PlayerPrefs.SetInt("Stan", stankonta);
-            tmSlotMachine.text = RandomMoney.ToString();
-        }
-        // Szansa 3%
-            if(x >= 94)
-        {
-            Debug.Log("Trafiony zatopiony!");
-                if (x >= 94 && x <= 95)
+            SMA.enabled = true;
+            SMA.Rebind();
+            StartCoroutine(SlotTimeMachine());
+
+            int punktacjaSM = PlayerPrefs.GetInt("punktacja", 0) - price;
+            PlayerPrefs.SetInt("punktacja", punktacjaSM);
+
+            // Szansa 50% - Pusty traf
+            if (x < 50)
             {
-            int zestaw2 = PlayerPrefs.GetInt("outfit2", 0);
-                if (zestaw2 == 0)
-                {
-                    PlayerPrefs.SetInt("outfit2", 1);
-                    outfit2.SetActive(true);
-                    gotowardrobeButton.SetActive(true);
-                }
-                else
-                {
-                    int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
-                    PlayerPrefs.SetInt("Stan", stankonta);
-                    tmSlotMachine.text = BonusRandomMoney.ToString();
-                }
+                int stankonta = PlayerPrefs.GetInt("punktacja", 0) + SadRandomMoney;
+                PlayerPrefs.SetInt("Stan", stankonta);
+                tmSlotMachine.text = SadRandomMoney.ToString();
+                Debug.Log("Pusty traf");
             }
-                if (x >= 96 && x <= 97)
+            // Szansa 40% - Pieniążki
+            if (x >= 50 && x < 90)
+            {
+
+                int stankonta = PlayerPrefs.GetInt("punktacja", 0) + RandomMoney;
+                PlayerPrefs.SetInt("Stan", stankonta);
+                tmSlotMachine.text = RandomMoney.ToString();
+            }
+
+
+            if (bidbools.sto == true || bidbools.dwie == true)
+            {
+                // Szansa 10%
+                if (x >= 90)
                 {
-                    int zestaw3 = PlayerPrefs.GetInt("outfit3", 0);
-                    if (zestaw3 == 0)
+                    Debug.Log("Trafiony zatopiony!");
+                    if (x >= 90 && x <= 92)
                     {
-                        PlayerPrefs.SetInt("outfit3", 1);
-                        outfit3.SetActive(true);
+                        int zestaw2 = PlayerPrefs.GetInt("outfit2", 0);
+                        if (zestaw2 == 0)
+                        {
+                            PlayerPrefs.SetInt("outfit2", 1);
+                            outfit2.SetActive(true);
+                            gotowardrobeButton.SetActive(true);
+                            outfit = true;
+                            slotmachinetext.SetActive(false);
+                        }
+                        else
+                        {
+                            int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
+                            PlayerPrefs.SetInt("Stan", stankonta);
+                            tmSlotMachine.text = BonusRandomMoney.ToString();
+                        }
+                    }
+                    if (x > 92 && x <= 94)
+                    {
+                        int zestaw3 = PlayerPrefs.GetInt("outfit3", 0);
+                        if (zestaw3 == 0)
+                        {
+                            PlayerPrefs.SetInt("outfit3", 1);
+                            outfit3.SetActive(true);
+                            gotowardrobeButton.SetActive(true);
+                            outfit = true;
+                            slotmachinetext.SetActive(false);
+                        }
+                        else
+                        {
+                            int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
+                            PlayerPrefs.SetInt("Stan", stankonta);
+                            tmSlotMachine.text = BonusRandomMoney.ToString();
+                        }
+                    }
+                    if (x > 94 && x <= 96)
+                    {
+                        int zestaw4 = PlayerPrefs.GetInt("outfit4", 0);
+                        if (zestaw4 == 0)
+                        {
+                            PlayerPrefs.SetInt("outfit4", 1);
+                            outfit4.SetActive(true);
+                            gotowardrobeButton.SetActive(true);
+                            outfit = true;
+                            slotmachinetext.SetActive(false);
+                        }
+                        else
+                        {
+                            int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
+                            PlayerPrefs.SetInt("Stan", stankonta);
+                            tmSlotMachine.text = BonusRandomMoney.ToString();
+                        }
+                    }
+
+                    if (x > 96 && x <= 98)
+                    {
+                        map.SetActive(true);
                         gotowardrobeButton.SetActive(true);
+                        outfit = true;
+                        slotmachinetext.SetActive(false);
                     }
                     else
                     {
@@ -103,39 +198,25 @@ public class SlotMachineController : MonoBehaviour
                         PlayerPrefs.SetInt("Stan", stankonta);
                         tmSlotMachine.text = BonusRandomMoney.ToString();
                     }
-                }
-                if (x >= 98 && x <= 99)
-            {
-                int zestaw3 = PlayerPrefs.GetInt("outfit4", 0);
-                if (zestaw3 == 0)
-                {
-                        PlayerPrefs.SetInt("outfit4", 1);
-                        outfit4.SetActive(true);
-                        gotowardrobeButton.SetActive(true);
-                }
-                else
-                {
-                    int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
-                    PlayerPrefs.SetInt("Stan", stankonta);
-                    tmSlotMachine.text = BonusRandomMoney.ToString();
+
+                    if (x > 98 && x <= 100)
+                    {
+                        int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
+                        PlayerPrefs.SetInt("Stan", stankonta);
+                        tmSlotMachine.text = BonusRandomMoney.ToString();
+                    }
+
                 }
             }
 
-                if (x == 100)
-                {
-                    map.SetActive(true);
-                }
-                else
-                {
-                    int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
-                    PlayerPrefs.SetInt("Stan", stankonta);
-                    tmSlotMachine.text = BonusRandomMoney.ToString();
-                }
+            else
+            {
+                int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
+                PlayerPrefs.SetInt("Stan", stankonta);
+                tmSlotMachine.text = BonusRandomMoney.ToString();
+            }
 
-        }
-        tapstarttoslot.SetActive(false);
-        selectButton.SetActive(true);
-        gameObject.SetActive(false);
+
         }
     }
 }
