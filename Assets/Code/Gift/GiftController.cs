@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Net;
+using System;
 
 public class GiftController : MonoBehaviour
 {
-    public int timeDayNow;
-    public int timeHour;
-    public int lastDayWithGift;
+    public int lastDateWithGift;
     public int giftValue = 25;
     public GetGiftButton getGiftBtn;
 
@@ -16,12 +15,12 @@ public class GiftController : MonoBehaviour
 
     void Start()
     {
-        timeDayNow = System.DateTime.Now.Day;
-        lastDayWithGift = PlayerPrefs.GetInt("LastDayWithGift", 0);
+        DateTime timeNow = System.DateTime.Now;
+        LastDateWithGift = PlayerPrefs.GetString("LastDateWithGift", "0");
         giftValue = PlayerPrefs.GetInt("GiftValue", 0);
 
-
-        if (lastDayWithGift < timeDayNow)
+        //Dzień
+        if (lastDayWithGift < timeNow.Day)
         {
             giftWasntGiven = true;
         }
@@ -32,20 +31,20 @@ public class GiftController : MonoBehaviour
             {
                 if (lastDayWithGift == 0)
                 {
-                    lastDayWithGift = timeDayNow;
+                    lastDayWithGift = timeNow.Day;
                     giftWasntGiven = false;
                 }
 
-                if (lastDayWithGift + 1 == timeDayNow)
+                if (lastDayWithGift + 1 == timeNow.Day)
                 {
                     giveValue = true;
                     giftWasntGiven = false;
                 }
 
-                if (lastDayWithGift <= timeDayNow && lastDayWithGift != 0)
+                if (lastDayWithGift < timeNow.Day && lastDayWithGift != 0)
                 {
                     PlayerPrefs.SetInt("GiftValue", 0);
-                    lastDayWithGift = timeDayNow;
+                    lastDayWithGift = timeNow.Day;
                     giftWasntGiven = false;
                 }
             }
