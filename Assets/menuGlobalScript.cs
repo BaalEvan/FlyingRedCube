@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Net;
 
-public class menuGlobalScript : MonoBehaviour {
-    public int timeDayNow;
+public class menuGlobalScript : MonoBehaviour
+{
     public GiftController GC;
     public GameObject GiftGraphic;
     public GameObject playBtn;
@@ -11,9 +11,10 @@ public class menuGlobalScript : MonoBehaviour {
     public GameObject statsBtn;
     public GameObject shopBtn;
     // Use this for initialization
-    void Start () {
 
-        timeDayNow = System.DateTime.Now.Day;
+    IEnumerator GiftTime()
+    {
+        yield return new WaitForSeconds(1.5f);
 
         if (GC.giftWasntGiven == true)
         {
@@ -23,10 +24,11 @@ public class menuGlobalScript : MonoBehaviour {
             statsBtn.SetActive(false);
             shopBtn.SetActive(false);
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    }
+
+    void Start()
+    {
+        StartCoroutine(GiftTime());
+
+    }
 }

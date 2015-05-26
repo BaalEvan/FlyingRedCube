@@ -8,6 +8,7 @@ public class textGift : MonoBehaviour {
 
     void Update()
     {
-        tmBonus.text = PlayerPrefs.GetInt("GiftValue").ToString();
+        int giftValue = PlayerPrefs.GetInt("GiftValue", 0) + 25;
+        tmBonus.text = giftValue.ToString();
     }
 }

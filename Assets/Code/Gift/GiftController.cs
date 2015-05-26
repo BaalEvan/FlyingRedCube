@@ -7,13 +7,12 @@ public class GiftController : MonoBehaviour
     public int timeDayNow;
     public int timeHour;
     public int lastDayWithGift;
-    public int giftValue = 0;
-    public bool giftWasntGiven = false;
-    public bool isFirstDay = false;
+    public int giftValue = 25;
+    public GetGiftButton getGiftBtn;
 
-    public bool giveGift = false;
-    public bool giveGiftMax = false;
-    public bool giveGiftFirstDay = false;
+    public bool giftWasntGiven = false;
+    public bool giftWasGiven = false;
+    public bool giveValue = false;
 
     void Start()
     {
@@ -27,38 +26,41 @@ public class GiftController : MonoBehaviour
             giftWasntGiven = true;
         }
 
-        if (giftWasntGiven)
+        if (getGiftBtn.giveGift == true)
         {
-            if (lastDayWithGift == 0)
+            if (giftWasntGiven == true)
             {
-                isFirstDay = true;
-            }
-
-                if (isFirstDay == true)
-             {
-                    PlayerPrefs.SetInt("LastDayWithGift", timeDayNow);
-                    lastDayWithGift = timeDayNow;
-             }
-
-
-            // Otrzymywanie pieniazków
-            if (lastDayWithGift + 1 == timeDayNow || isFirstDay)
-            {
-                PlayerPrefs.SetInt("LastDayWithGift", timeDayNow);
-                if (giftValue <= 200)
+                if (lastDayWithGift == 0)
                 {
-                    giveGift = true;
+                    lastDayWithGift = timeDayNow;
+                    giftWasntGiven = false;
+                }
+
+                if (lastDayWithGift + 1 == timeDayNow)
+                {
+                    giveValue = true;
+                    giftWasntGiven = false;
+                }
+
+                if (lastDayWithGift <= timeDayNow && lastDayWithGift != 0)
+                {
+                    PlayerPrefs.SetInt("GiftValue", 0);
+                    lastDayWithGift = timeDayNow;
+                    giftWasntGiven = false;
                 }
             }
             else
             {
-                giveGiftMax = true;
+                giftWasGiven = true;
             }
-        }
-        else
-        {
-            giveGiftFirstDay = true;
         }
 
     }
+
+
+    void Update()
+    {
+
+    }
+
 }
