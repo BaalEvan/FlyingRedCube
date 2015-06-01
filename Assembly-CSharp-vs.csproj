@@ -39,13 +39,14 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:\Program Files\Unity\Editor\Data\PlaybackEngines\wp8support/Tools/UnityEngine.dll</HintPath>
+	  <HintPath>d:\Unity\Editor\Data\PlaybackEngines\wp8support/Tools/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>d:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ButtonController.cs" />
      <Compile Include="Assets\Code\Gift\GetGiftButton.cs" />
      <Compile Include="Assets\Code\Gift\GiftController.cs" />
      <Compile Include="Assets\Code\Gift\textGift.cs" />
@@ -113,32 +114,13 @@
      <Compile Include="Assets\Code\shop\outfit5.cs" />
      <Compile Include="Assets\Code\shop\outfit6.cs" />
      <Compile Include="Assets\Code\skrzydlascript.cs" />
-     <None Include="Assets\Plugins\P31MetroEssentials.xml" />
-     <None Include="Assets\Plugins\MetroStoreDemo\license.xml" />
-     <None Include="Assets\Plugins\P31MetroAds.xml" />
-     <None Include="Assets\Plugins\P31MetroStore.xml" />
+     <Compile Include="Assets\SoundController.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="P31MetroAds">
- <HintPath>C:/Users/Norbert/Documents/Repozytoria/FlyingRedCube/Assets/Plugins/P31MetroAds.dll</HintPath>
- </Reference>
- <Reference Include="P31MetroEssentials">
- <HintPath>C:/Users/Norbert/Documents/Repozytoria/FlyingRedCube/Assets/Plugins/P31MetroEssentials.dll</HintPath>
- </Reference>
- <Reference Include="P31MetroStore">
- <HintPath>C:/Users/Norbert/Documents/Repozytoria/FlyingRedCube/Assets/Plugins/P31MetroStore.dll</HintPath>
- </Reference>
- <Reference Include="P31RestKit">
- <HintPath>C:/Users/Norbert/Documents/Repozytoria/FlyingRedCube/Assets/Plugins/P31RestKit.dll</HintPath>
+ <HintPath>d:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>d:/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
-      <Project>{C0F39C72-DCDD-2D9B-5E38-76315BEB3F35}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

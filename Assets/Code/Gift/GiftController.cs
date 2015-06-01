@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 using System.Net;
 using System;
@@ -62,4 +62,4 @@ public class GiftController : MonoBehaviour
 
     }
 
-}
+}*/

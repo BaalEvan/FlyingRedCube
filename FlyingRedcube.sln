@@ -1,8 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{07124FE9-B692-353D-F6E6-DB04AA1C5646}") = "FlyingRedCube", "Assembly-CSharp-firstpass.csproj", "{C0F39C72-DCDD-2D9B-5E38-76315BEB3F35}"
-EndProject
 Project("{07124FE9-B692-353D-F6E6-DB04AA1C5646}") = "FlyingRedCube", "Assembly-CSharp.csproj", "{4A6885B7-F2E1-C2F1-8B42-EC55BDDB54AC}"
 EndProject
 Global
@@ -11,10 +9,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C0F39C72-DCDD-2D9B-5E38-76315BEB3F35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0F39C72-DCDD-2D9B-5E38-76315BEB3F35}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0F39C72-DCDD-2D9B-5E38-76315BEB3F35}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0F39C72-DCDD-2D9B-5E38-76315BEB3F35}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A6885B7-F2E1-C2F1-8B42-EC55BDDB54AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A6885B7-F2E1-C2F1-8B42-EC55BDDB54AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A6885B7-F2E1-C2F1-8B42-EC55BDDB54AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,7 +17,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																																																																																																																																																																																														GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																																																																																																																																																																								GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																																																																																																																																																																													GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> e19ce498fe10020ce89054a7e3d45b5f309dbfc5
