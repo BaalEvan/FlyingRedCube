@@ -29,9 +29,9 @@ public class GetGiftButton : MonoBehaviour
             PlayerPrefs.SetInt("punktacja", price);
         }
 
-        PlayerPrefs.SetInt("LastDayWithGift", GC.timeDayNow);
+       // PlayerPrefs.SetInt("LastDayWithGift", GC.timeNow.Day);
 
-        GC.lastDayWithGift = GC.timeDayNow;
+       // GC.lastDateWithGift = GC.timeNow.Day;
         GC.giftWasntGiven = false;
         GC.giftWasGiven = true;
 

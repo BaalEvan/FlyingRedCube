@@ -113,32 +113,12 @@
      <Compile Include="Assets\Code\shop\outfit5.cs" />
      <Compile Include="Assets\Code\shop\outfit6.cs" />
      <Compile Include="Assets\Code\skrzydlascript.cs" />
-     <None Include="Assets\Plugins\P31MetroEssentials.xml" />
-     <None Include="Assets\Plugins\MetroStoreDemo\license.xml" />
-     <None Include="Assets\Plugins\P31MetroAds.xml" />
-     <None Include="Assets\Plugins\P31MetroStore.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="P31MetroAds">
- <HintPath>C:/Users/Norbert/Documents/Repozytoria/FlyingRedCube/Assets/Plugins/P31MetroAds.dll</HintPath>
- </Reference>
- <Reference Include="P31MetroEssentials">
- <HintPath>C:/Users/Norbert/Documents/Repozytoria/FlyingRedCube/Assets/Plugins/P31MetroEssentials.dll</HintPath>
- </Reference>
- <Reference Include="P31MetroStore">
- <HintPath>C:/Users/Norbert/Documents/Repozytoria/FlyingRedCube/Assets/Plugins/P31MetroStore.dll</HintPath>
- </Reference>
- <Reference Include="P31RestKit">
- <HintPath>C:/Users/Norbert/Documents/Repozytoria/FlyingRedCube/Assets/Plugins/P31RestKit.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{C0F39C72-DCDD-2D9B-5E38-76315BEB3F35}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
