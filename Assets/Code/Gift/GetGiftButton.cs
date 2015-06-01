@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 
 public class GetGiftButton : MonoBehaviour
@@ -43,4 +43,4 @@ public class GetGiftButton : MonoBehaviour
         Debug.Log("Bonus wypłacony!");
         gift.SetActive(false);
     }
-}
+}*/

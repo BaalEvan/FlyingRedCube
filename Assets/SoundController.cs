@@ -1,12 +1,15 @@
-﻿/*
+﻿
+
 using UnityEngine;
 using System.Collections;
 
-public class soundbtn : MenuButtonClass
-{
+public class SoundController : MenuButtonClass
+{ 
+
     public GameObject soundoff;
     public GameObject sound;
-    public bool dzwiekwlacz = false;
+    public bool dzwiekwlacz;
+    public ButtonController BC;
 
     // Use this for initialization
     void Start()
@@ -16,40 +19,41 @@ public class soundbtn : MenuButtonClass
 
         if (cos == 0)
         {
-            soundoff.SetActive(false);
+            //soundoff.SetActive(false);
+            Debug.Log("soundoff false");
         }
         else
         {
-            soundoff.SetActive(true);
+            //soundoff.SetActive(true);
             AudioListener.pause = true;
+            Debug.Log("soundoff true");
         }
+
+        
     }
 
     void Update()
     {
-    }
-
-    //public void soundbutton()
-    public override void OnMouseDown()
-    {
-        base.OnMouseDown();
-        if (dzwiekwlacz == false)
+        if (BC.soundoffbtn == false)
         {
-            Debug.Log("sound on");
-            dzwiekwlacz = true;
-            soundoff.SetActive(true);
+
+            dzwiekwlacz = false;
+            //soundoff.SetActive(true);
             AudioListener.pause = true;
             PlayerPrefs.SetInt("soundset", 1);
 
         }
         else
         {
-            Debug.Log("sound off");
-            dzwiekwlacz = false;
+
+            dzwiekwlacz = true;
             AudioListener.pause = false;
-            soundoff.SetActive(false);
+            //soundoff.SetActive(false);
             PlayerPrefs.SetInt("soundset", 0);
         }
+
     }
 }
-*/
+
+
+

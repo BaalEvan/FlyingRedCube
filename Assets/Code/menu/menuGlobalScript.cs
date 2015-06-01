@@ -4,7 +4,7 @@ using System.Net;
 
 public class menuGlobalScript : MonoBehaviour
 {
-    public GiftController GC;
+    //public GiftController GC;
     public GameObject GiftGraphic;
     public GameObject playBtn;
     public GameObject soundBtn;
@@ -16,14 +16,14 @@ public class menuGlobalScript : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
 
-        if (GC.giftWasntGiven == true)
+        /*if (GC.giftWasntGiven == true)
         {
             GiftGraphic.SetActive(true);
             playBtn.SetActive(false);
             soundBtn.SetActive(false);
             statsBtn.SetActive(false);
             shopBtn.SetActive(false);
-        }
+        }*/
     }
 
     void Start()
