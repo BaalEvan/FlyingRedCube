@@ -31,6 +31,17 @@ public class ButtonController : MonoBehaviour
         
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+            Debug.Log("Application Quit");
+    }
+
+    public void exit()
+    {
+        Debug.Log("exit on");
+    }
+
 
 }
 
