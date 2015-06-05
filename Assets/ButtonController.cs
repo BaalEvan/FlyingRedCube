@@ -32,6 +32,12 @@ public class ButtonController : MonoBehaviour
         Application.LoadLevel(name);
     }
 
+    public void OnLevelWasLoaded(int level)
+    {
+        if(level == 1)
+            print("loaded");
+    }
+
     public void SoudOfButton()
     {
         soundoffbtn = !soundoffbtn;
