@@ -39,26 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-<<<<<<< HEAD
-<<<<<<< HEAD
 	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
-=======
-	  <HintPath>d:\Unity\Editor\Data\PlaybackEngines\wp8support/Tools/UnityEngine.dll</HintPath>
->>>>>>> 3b40a6c25fab925cce9b7f8f001f03cb2bc5cf6d
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>d:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
-=======
-	  <HintPath>C:\Program Files\Unity\Editor\Data\PlaybackEngines\wp8support/Tools/UnityEngine.dll</HintPath>
-	</Reference>
-	<Reference Include="UnityEditor">
-<<<<<<< HEAD
-	  <HintPath>d:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
->>>>>>> 64302d40ea262fd8733d43d09eedc3bd167c6c9b
-=======
 	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
->>>>>>> e01f85c1107e7b9df1bc3f43f41d159550416a98
->>>>>>> 3b40a6c25fab925cce9b7f8f001f03cb2bc5cf6d
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -130,26 +114,10 @@
      <Compile Include="Assets\Code\skrzydlascript.cs" />
      <Compile Include="Assets\SoundController.cs" />
  <Reference Include="UnityEngine.UI">
-<<<<<<< HEAD
-<<<<<<< HEAD
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
-=======
- <HintPath>d:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
->>>>>>> 3b40a6c25fab925cce9b7f8f001f03cb2bc5cf6d
- </Reference>
- <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>d:/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-=======
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-<<<<<<< HEAD
- <HintPath>d:/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
->>>>>>> 64302d40ea262fd8733d43d09eedc3bd167c6c9b
-=======
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
->>>>>>> e01f85c1107e7b9df1bc3f43f41d159550416a98
->>>>>>> 3b40a6c25fab925cce9b7f8f001f03cb2bc5cf6d
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
