@@ -15,6 +15,16 @@ public class ButtonController : MonoBehaviour
     public GameObject flyredcube;
     public flyredcubefly frcf;
 
+    public GameObject postacSkrzydla;
+    public GameObject postacZeSkrzydlami;
+
+    public GameObject exitImage;
+    public GameObject settingsImage;
+    public GameObject playBtn;
+    public GameObject statsBtn;
+    public GameObject loteryBtn;
+    public GameObject shopBtn;
+
     void Start ()
     {
     }
@@ -26,6 +36,30 @@ public class ButtonController : MonoBehaviour
 	    if(Input.GetKeyDown(KeyCode.Escape))
             Application.LoadLevel("koniec");
 	}
+
+    public void stopAnimatorMenuExitBtn()
+    {
+        postacZeSkrzydlami.GetComponent<Animator>().applyRootMotion = true;
+        postacSkrzydla.GetComponent<Animator>().enabled = false;
+        exitImage.GetComponent<Button>().enabled = false;
+        settingsImage.GetComponent<Button>().enabled = false;
+        playBtn.SetActive(false);
+        statsBtn.SetActive(false);
+        loteryBtn.SetActive(false);
+        shopBtn.SetActive(false);
+    }
+
+    public void playAnimatorMenuExitBtn()
+    {
+        postacZeSkrzydlami.GetComponent<Animator>().applyRootMotion = false;
+        postacSkrzydla.GetComponent<Animator>().enabled= true;
+        exitImage.GetComponent<Button>().enabled = true;
+        settingsImage.GetComponent<Button>().enabled = true;
+        playBtn.SetActive(true);
+        statsBtn.SetActive(true);
+        loteryBtn.SetActive(true);
+        shopBtn.SetActive(true);
+    }
 
     public void ChangeScene(string name)
     {
