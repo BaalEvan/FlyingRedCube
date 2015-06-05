@@ -1,4 +1,10 @@
 5.0.2f1:1.9.9.0
+<<<<<<< HEAD
 StandaloneWindows
 C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
 C:\Program Files\Unity\Editor\Data\PlaybackEngines\iossupport\UnityEditor.iOS.Extensions.Xcode.dll
+=======
+WP8Player
+d:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
+d:\Unity\Editor\Data\PlaybackEngines\iossupport\UnityEditor.iOS.Extensions.Xcode.dll
+>>>>>>> 64302d40ea262fd8733d43d09eedc3bd167c6c9b
