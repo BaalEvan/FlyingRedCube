@@ -8,6 +8,13 @@ public class ButtonController : MonoBehaviour
     public GameObject soundoff;
     public bool soundoffbtn = true;
 
+    public GameObject pauza;
+    public SpawnController contro;
+    public bool duzaglupota = true;
+    public pausebool pauzabool;
+    public GameObject flyredcube;
+    public flyredcubefly frcf;
+
     void Start ()
     {
     }
@@ -42,6 +49,32 @@ public class ButtonController : MonoBehaviour
         Debug.Log("exit on");
     }
 
+    public void pause()
+    {
+        if (duzaglupota == true)
+        {
+            Debug.Log("Wcisniecie przycisku Pause");
+            pauza.SetActive(true);
+            flyredcube.SetActive(false);
+            contro.stop = true;
+            pauzabool.pauzazatrzymanie = false;
+            duzaglupota = false;
+            Time.timeScale = 0;
+            Debug.Log("Otworzenie pauzy");
+        }
+        else
+        {
+            Debug.Log("Wcisniecie przycisku Pause");
+            pauza.SetActive(false);
+            flyredcube.SetActive(true);
+            contro.stop = false;
+            pauzabool.pauzazatrzymanie = true;
+            duzaglupota = true;
+            Time.timeScale = 1;
+            Debug.Log("Zamkniecie pauzy");
+
+        }
+    }
 
 }
 
