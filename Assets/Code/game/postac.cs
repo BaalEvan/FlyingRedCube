@@ -116,10 +116,13 @@ public class postac : MonoBehaviour
     {
         if (FigureLife == 0)
         {
+            life1.SetActive(false);
+            life2.SetActive(false);
             life3.SetActive(false);
         }
         if (FigureLife == 1)
         {
+            life1.SetActive(false);
             life2.SetActive(false);
         }
         if (FigureLife == 2)

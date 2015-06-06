@@ -53,29 +53,7 @@ public class pausebtn : MonoBehaviour {
     }
     void OnMouseDown()
     {
-        if (duzaglupota == true)
-        {
-            Debug.Log("Wcisniecie przycisku Pause");
-            pauza.SetActive(true);
-            flyredcube.SetActive(false);
-            Debug.Log("Otworzenie pauzy");
-            Time.timeScale = 0;
-            contro.stop = true;
-            pauzabool.pauzazatrzymanie = false;
-            duzaglupota = false;
-        }
-        else
-        {
-            Debug.Log("Wcisniecie przycisku Pause");
-            pauza.SetActive(false);
-            Debug.Log("Zamkniecie pauzy");
-            flyredcube.SetActive(true);
-            Time.timeScale = 1;
-            contro.stop = false;
-            pauzabool.pauzazatrzymanie = true;
-            duzaglupota = true;
-            
-        }
+
 
     }
     }
