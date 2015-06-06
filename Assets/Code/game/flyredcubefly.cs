@@ -14,7 +14,7 @@ public class flyredcubefly : MonoBehaviour
     public GameObject gamesound;
     public GameObject pausebtn;
     public GameObject jump;
-    public GameObject loading;
+    //   public GameObject loading;
     public bool glupota = true;
     public bool pausebool = true;
 
@@ -24,13 +24,12 @@ public class flyredcubefly : MonoBehaviour
 
     //public postac pScript;
 
-    public bool clicked;
+    public bool clicked = false;
     public bool dead;
     public bool click = false;
     // Use this for initialization
     void Start()
     {
-        loading = GameObject.FindWithTag("Loading");
         kwadratstart.rozpoczecie = true;
         contro.stop = true;
         zatrzymanieruchu.stopmove = false;
@@ -42,7 +41,7 @@ public class flyredcubefly : MonoBehaviour
     void Update()
     {
 
-        DestroyObject(loading);
+    //    DestroyObject(loading);
         if (!dead)
             if (clicked)
             {
@@ -66,6 +65,8 @@ public class flyredcubefly : MonoBehaviour
     {
         if (glupota == true)
         {
+
+            GetComponent<AudioSource>().mute = false;
             Debug.Log("Rozpoczecie gry");
             kwadratstart.rozpoczecie = false;
             contro.stop = false;
@@ -77,6 +78,7 @@ public class flyredcubefly : MonoBehaviour
         }
         clicked = true;
     }
+
     void OnMouseUp()
     {
         clicked = false;

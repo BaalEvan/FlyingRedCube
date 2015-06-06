@@ -55,6 +55,13 @@ public class ButtonController : MonoBehaviour
         Debug.Log("exit on");
     }
 
+    public void PlayAgain()
+    {
+        Application.LoadLevel("game");
+        Time.timeScale = 1;
+        Debug.Log("againBTN");
+    }
+
     public void pause()
     {
         if (duzaglupota == true)
@@ -68,6 +75,7 @@ public class ButtonController : MonoBehaviour
             Time.timeScale = 0;
             Debug.Log("Otworzenie pauzy");
         }
+
         else
         {
             Debug.Log("Wcisniecie przycisku Pause");

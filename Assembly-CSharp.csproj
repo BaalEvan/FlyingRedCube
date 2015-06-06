@@ -70,7 +70,6 @@
      <Compile Include="Assets\Code\game\kwadratprzesuniecie.cs" />
      <Compile Include="Assets\Code\game\pausebool.cs" />
      <Compile Include="Assets\Code\game\pausebtn.cs" />
-     <Compile Include="Assets\Code\game\playagainbtn.cs" />
      <Compile Include="Assets\Code\game\postac.cs" />
      <Compile Include="Assets\Code\game\rank.cs" />
      <Compile Include="Assets\Code\game\returnbtnpause.cs" />
