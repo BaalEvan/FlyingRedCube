@@ -25,17 +25,25 @@ public class ButtonController : MonoBehaviour
     public GameObject loteryBtn;
     public GameObject shopBtn;
 
-    void Start ()
+    public GameObject loadingGraphic;
+
+    void Start()
     {
     }
-	
 
-	void Update ()
-	{
-	    
-	    if(Input.GetKeyDown(KeyCode.Escape))
-            Application.LoadLevel("koniec");
-	}
+
+    void Update()
+    {
+        //if(Input.GetKeyDown(KeyCode.Escape))
+        //       Application.LoadLevel("koniec");
+    }
+
+    public void loading()
+    {
+        loadingGraphic.SetActive(true);
+        DontDestroyOnLoad(loadingGraphic);
+        Application.LoadLevel("game");
+    }
 
     public void stopAnimatorMenuExitBtn()
     {
@@ -52,7 +60,7 @@ public class ButtonController : MonoBehaviour
     public void playAnimatorMenuExitBtn()
     {
         postacZeSkrzydlami.GetComponent<Animator>().applyRootMotion = false;
-        postacSkrzydla.GetComponent<Animator>().enabled= true;
+        postacSkrzydla.GetComponent<Animator>().enabled = true;
         exitImage.GetComponent<Button>().enabled = true;
         settingsImage.GetComponent<Button>().enabled = true;
         playBtn.SetActive(true);
@@ -68,20 +76,20 @@ public class ButtonController : MonoBehaviour
 
     public void OnLevelWasLoaded(int level)
     {
-        if(level == 1)
+        if (level == 1)
             print("loaded");
     }
 
     public void SoudOfButton()
     {
         soundoffbtn = !soundoffbtn;
-        
+
     }
 
     public void Quit()
     {
         Application.Quit();
-            Debug.Log("Application Quit");
+        Debug.Log("Application Quit");
     }
 
     public void exit()
