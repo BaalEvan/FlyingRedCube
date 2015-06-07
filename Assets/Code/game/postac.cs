@@ -24,7 +24,7 @@ public class postac : MonoBehaviour
     public GameObject life2;
     public GameObject life3;
 
-	public GameObject baza;
+    public GameObject baza;
     public GameObject panda;
     public GameObject mummy;
     public GameObject rambo;
@@ -38,7 +38,6 @@ public class postac : MonoBehaviour
     private void Start()
     {
         // Life
-
         if (PlayerPrefs.GetInt("setfigure2") == 1)
         {
             life2.SetActive(true);
@@ -51,12 +50,12 @@ public class postac : MonoBehaviour
             life2.SetActive(true);
             FigureLife = 3;
         }
-       
+
 
         // Outfit
         if (PlayerPrefs.GetInt("setoutfit1", 0) == 1)
         {
-			baza.SetActive(true);
+            baza.SetActive(true);
             panda.SetActive(false);
             mummy.SetActive(false);
             rambo.SetActive(false);
@@ -65,7 +64,7 @@ public class postac : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("setoutfit2", 0) == 1)
         {
-			baza.SetActive(false);
+            baza.SetActive(false);
             panda.SetActive(true);
             mummy.SetActive(false);
             rambo.SetActive(false);
@@ -74,7 +73,7 @@ public class postac : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("setoutfit3", 0) == 1)
         {
-			baza.SetActive(false);
+            baza.SetActive(false);
             panda.SetActive(false);
             mummy.SetActive(true);
             rambo.SetActive(false);
@@ -83,7 +82,7 @@ public class postac : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("setoutfit4", 0) == 1)
         {
-			baza.SetActive(false);
+            baza.SetActive(false);
             panda.SetActive(false);
             mummy.SetActive(false);
             rambo.SetActive(true);
@@ -92,7 +91,7 @@ public class postac : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("setoutfit5", 0) == 1)
         {
-			baza.SetActive(false);
+            baza.SetActive(false);
             panda.SetActive(false);
             mummy.SetActive(false);
             rambo.SetActive(false);
@@ -101,7 +100,7 @@ public class postac : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("setoutfit6", 0) == 1)
         {
-			baza.SetActive(false);
+            baza.SetActive(false);
             panda.SetActive(false);
             mummy.SetActive(false);
             rambo.SetActive(false);
@@ -162,18 +161,6 @@ public class postac : MonoBehaviour
 
         if (Niemozebyc.gameObject.tag == "ENEMY")
         {
-            if (PlayerPrefs.GetInt("setfigure1") == 1)
-            {
-                frcf.dead = true;
-                contro.stop = true;
-                pktgo.SetActive(true);
-                gameover.SetActive(true);
-                zatrzymanieruchu.stopmove = false;
-                Destroy(GetComponent<Animator>());
-                gamesound.SetActive(false);
-                zonk.SetActive(true);
-            }
-
             if (PlayerPrefs.GetInt("setfigure2") == 1 || PlayerPrefs.GetInt("setfigure3") == 1)
             {
                 StartCoroutine(FigureHit());
@@ -187,11 +174,24 @@ public class postac : MonoBehaviour
                     Destroy(GetComponent<Animator>());
                     gamesound.SetActive(false);
                     zonk.SetActive(true);
+
+                    if(FigureLife > 0)
+                    {
+                        transform.position = Niemozebyc.gameObject.transform.parent.FindChild("pieniazki(Clone)").transform.position;
+                    }
+
                 }
-                else
-                {
-                    transform.position = Niemozebyc.gameObject.transform.parent.FindChild("pieniazki(Clone)").transform.position;
-                }
+            }
+            else
+            {
+                frcf.dead = true;
+                contro.stop = true;
+                pktgo.SetActive(true);
+                gameover.SetActive(true);
+                zatrzymanieruchu.stopmove = false;
+                Destroy(GetComponent<Animator>());
+                gamesound.SetActive(false);
+                zonk.SetActive(true);
             }
         }
     }
@@ -205,10 +205,10 @@ public class postac : MonoBehaviour
             Timer.GetComponent<TextMesh>().text = Pkt.ToString();
             Destroy(other.gameObject);
 
-                int x = PlayerPrefs.GetInt("punktacja", 0) + 1;
-                PlayerPrefs.SetInt("punktacja", x);
-                Debug.Log("uzbierałeś razem: " + x + "punktów");
-            
+            int x = PlayerPrefs.GetInt("punktacja", 0) + 1;
+            PlayerPrefs.SetInt("punktacja", x);
+            Debug.Log("uzbierałeś razem: " + x + "punktów");
+
 
             if (Pkt >= 20)
             {
