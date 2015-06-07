@@ -162,39 +162,6 @@ public class postac : MonoBehaviour
 
         if (Niemozebyc.gameObject.tag == "ENEMY")
         {
-
-            if (PlayerPrefs.GetInt("setfigure2") == 1)
-            {
-                StartCoroutine(FigureHit());
-                if (FigureLife == 0)
-                {
-                    frcf.dead = true;
-                    contro.stop = true;
-                    pktgo.SetActive(true);
-                    gameover.SetActive(true);
-                    zatrzymanieruchu.stopmove = false;
-                    Destroy(GetComponent<Animator>());
-                    gamesound.SetActive(false);
-                    zonk.SetActive(true);
-                }
-            }
-
-            if (PlayerPrefs.GetInt("setfigure3") == 1)
-            {
-                StartCoroutine(FigureHit());
-                if (FigureLife == 0)
-                {
-                    frcf.dead = true;
-                    contro.stop = true;
-                    pktgo.SetActive(true);
-                    gameover.SetActive(true);
-                    zatrzymanieruchu.stopmove = false;
-                    Destroy(GetComponent<Animator>());
-                    gamesound.SetActive(false);
-                    zonk.SetActive(true);
-                }
-            }
-
             if (PlayerPrefs.GetInt("setfigure1") == 1)
             {
                 frcf.dead = true;
@@ -205,6 +172,26 @@ public class postac : MonoBehaviour
                 Destroy(GetComponent<Animator>());
                 gamesound.SetActive(false);
                 zonk.SetActive(true);
+            }
+
+            if (PlayerPrefs.GetInt("setfigure2") == 1 || PlayerPrefs.GetInt("setfigure3") == 1)
+            {
+                StartCoroutine(FigureHit());
+                if (FigureLife == 0)
+                {
+                    frcf.dead = true;
+                    contro.stop = true;
+                    pktgo.SetActive(true);
+                    gameover.SetActive(true);
+                    zatrzymanieruchu.stopmove = false;
+                    Destroy(GetComponent<Animator>());
+                    gamesound.SetActive(false);
+                    zonk.SetActive(true);
+                }
+                else
+                {
+                    transform.position = Niemozebyc.gameObject.transform.parent.FindChild("pieniazki(Clone)").transform.position;
+                }
             }
         }
     }

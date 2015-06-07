@@ -185,22 +185,22 @@ public class SlotMachineController : MonoBehaviour
                         }
                     }
 
-                    if (x > 96 && x <= 98)
+                    if (x > 96 && x <= 100)
                     {
-                        map.SetActive(true);
-                        gotowardrobeButton.SetActive(true);
-                        outfit = true;
-                        slotmachinetext.SetActive(false);
-                    }
-                    else
-                    {
-                        int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
-                        PlayerPrefs.SetInt("Stan", stankonta);
-                        tmSlotMachine.text = BonusRandomMoney.ToString();
-                    }
+                    //    map.SetActive(true);
+                    //    gotowardrobeButton.SetActive(true);
+                    //    outfit = true;
+                    //    slotmachinetext.SetActive(false);
+                    //}
+                    //else
+                    //{
+                    //    int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
+                    //    PlayerPrefs.SetInt("Stan", stankonta);
+                    //    tmSlotMachine.text = BonusRandomMoney.ToString();
+                    //}
 
-                    if (x > 98 && x <= 100)
-                    {
+                    //if (x > 98 && x <= 100)
+                    //{
                         int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
                         PlayerPrefs.SetInt("Stan", stankonta);
                         tmSlotMachine.text = BonusRandomMoney.ToString();
