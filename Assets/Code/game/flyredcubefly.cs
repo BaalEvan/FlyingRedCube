@@ -57,6 +57,7 @@ public class flyredcubefly : MonoBehaviour
             gameObject.SetActive(false);
             punk.SetActive(false);
             pausebool = false;
+            pausebtn.SetActive(false);
         }
 
     }

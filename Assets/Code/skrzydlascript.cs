@@ -18,17 +18,17 @@ public class skrzydlascript : MonoBehaviour
        
 	    if (frcf.dead == true)
 	    {
-            Destroy(GetComponent<Animator>());
+            anim.GetComponent<Animator>().enabled = false;
         }
 
 	    if (frcf.clicked == true)
 	    {
-	        anim.speed = 3.25f;
+	        anim.speed = 4;
 	    }
 
 	    else
 	    {
-	        anim.Rebind();
+            anim.speed = 1;
 	    }
 	}
 }
