@@ -53,18 +53,6 @@
      <Compile Include="Assets\Code\Gift\textGift.cs" />
      <Compile Include="Assets\Code\OutfitBtn.cs" />
      <Compile Include="Assets\Code\OutfitMain.cs" />
-     <Compile Include="Assets\Code\WycieteKody\MenuButtonClass.cs" />
-     <Compile Include="Assets\Code\WycieteKody\backtomenubtn.cs" />
-     <Compile Include="Assets\Code\WycieteKody\backtomenubtnpause.cs" />
-     <Compile Include="Assets\Code\WycieteKody\backtomenugame.cs" />
-     <Compile Include="Assets\Code\WycieteKody\gotorecordbtn.cs" />
-     <Compile Include="Assets\Code\WycieteKody\infobtn.cs" />
-     <Compile Include="Assets\Code\WycieteKody\loadingscript.cs" />
-     <Compile Include="Assets\Code\WycieteKody\pausepausebtn.cs" />
-     <Compile Include="Assets\Code\WycieteKody\playbtn.cs" />
-     <Compile Include="Assets\Code\WycieteKody\returnbtnpause.cs" />
-     <Compile Include="Assets\Code\WycieteKody\soundgame.cs" />
-     <Compile Include="Assets\Code\WycieteKody\wardrobebtn.cs" />
      <Compile Include="Assets\Code\game\GlobalController.cs" />
      <Compile Include="Assets\Code\game\SpawnController.cs" />
      <Compile Include="Assets\Code\game\clicktoshowpoints.cs" />
@@ -89,6 +77,7 @@
      <Compile Include="Assets\Code\loteria\SlotMachineController.cs" />
      <Compile Include="Assets\Code\loteria\SlotMachineDownBid.cs" />
      <Compile Include="Assets\Code\loteria\SlotMachineUpBid.cs" />
+     <Compile Include="Assets\Code\menu\MenuButtonClass.cs" />
      <Compile Include="Assets\Code\menu\endGamebtn.cs" />
      <Compile Include="Assets\Code\menu\menuGlobalScript.cs" />
      <Compile Include="Assets\Code\menu\nobtn.cs" />
