@@ -132,5 +132,10 @@ public class ButtonController : MonoBehaviour
         }
     }
 
+    void OnMouseDown()
+    {
+        Debug.Log("click!!!");
+    }
+
 }
 

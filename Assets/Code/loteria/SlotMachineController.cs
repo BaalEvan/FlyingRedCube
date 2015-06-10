@@ -2,11 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using UnityEngine.UI;
 
 public class SlotMachineController : MonoBehaviour
 {
     public int price;
-
+    public GameObject slider;
     public GameObject outfit2;
     public GameObject outfit3;
     public GameObject outfit4;
@@ -33,7 +34,11 @@ public class SlotMachineController : MonoBehaviour
     public int brmlow;
     public int brmhigh;
 
-
+    void Start()
+    {
+        
+    }
+    
     public IEnumerator SlotTimeMachine()
     {
         tapstarttoslot.SetActive(false);
@@ -43,6 +48,12 @@ public class SlotMachineController : MonoBehaviour
         slotmachinetext.gameObject.SetActive(true);
         selectButton.SetActive(true);
         //gameObject.SetActive(false);
+    }
+
+    void SliderVal()
+    {
+        //slider = GameObject.Find("Slider");
+        Debug.Log(slider);
     }
     
     public void OnMouseDown()
@@ -215,6 +226,8 @@ public class SlotMachineController : MonoBehaviour
                 PlayerPrefs.SetInt("Stan", stankonta);
                 tmSlotMachine.text = BonusRandomMoney.ToString();
             }
+
+           
 
 
         }
