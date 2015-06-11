@@ -27,10 +27,10 @@ public class ButtonController : MonoBehaviour
 
     public GameObject loadingGraphic;
 
-    void Start()
-    {
-        GraficSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
-    }
+//    void Start()
+//    {
+//        GraficSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+//    }
 
 
     void Update()
