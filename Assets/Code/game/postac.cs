@@ -32,6 +32,8 @@ public class postac : MonoBehaviour
     public GameObject gentleman;
     public Animation skrzydla;
 
+    public GameObject bohater;
+
     public int Pkt = 0;
     public int FigureLife;
 
@@ -133,7 +135,7 @@ public class postac : MonoBehaviour
     IEnumerator FigureHit()
     {
         FigureLife = FigureLife - 1;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
     }
 
     private void OnCollisionEnter2D(Collision2D Niemozebyc)
@@ -174,11 +176,10 @@ public class postac : MonoBehaviour
                     Destroy(GetComponent<Animator>());
                     gamesound.SetActive(false);
                     zonk.SetActive(true);
-
-                    if(FigureLife > 0)
-                    {
-                        transform.position = Niemozebyc.gameObject.transform.parent.FindChild("pieniazki(Clone)").transform.position;
-                    }
+                }
+                else
+                {
+                    transform.position = Niemozebyc.gameObject.transform.parent.FindChild("pieniazki(Clone)").transform.position;
 
                 }
             }
