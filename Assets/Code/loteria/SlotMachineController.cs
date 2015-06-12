@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using UnityEngine.UI;
 
 public class SlotMachineController : MonoBehaviour
 {
+    private float value;
     public int price;
-
+    public Slider slider;
     public GameObject outfit2;
     public GameObject outfit3;
     public GameObject outfit4;
@@ -20,7 +22,7 @@ public class SlotMachineController : MonoBehaviour
     public GameObject selectButton;
     public GameObject gotowardrobeButton;
 
-    public BidScript bidbools;
+//    public BidScript bidbools;
 
     public bool slotsecond = false;
     public bool outfit = false;
@@ -33,6 +35,12 @@ public class SlotMachineController : MonoBehaviour
     public int brmlow;
     public int brmhigh;
 
+    
+
+   void Start()
+   {
+       Debug.Log(value);
+   }
 
     public IEnumerator SlotTimeMachine()
     {
@@ -44,14 +52,24 @@ public class SlotMachineController : MonoBehaviour
         selectButton.SetActive(true);
         //gameObject.SetActive(false);
     }
-    
-    public void OnMouseDown()
+
+
+
+    void Update()
     {
-        var SM = GameObject.Find("Slotmachine");
+        value = slider.value;
+       // Debug.Log(value);
+    }
+    
+    public void OnValueChanged (float value)
+    {
+       var SM = GameObject.Find("Slotmachine");
         var SMA = SM.GetComponent<Animator>();
 
-        if (bidbools.piec == true)
+        //        if (bidbools.piec == true)
+        if (slider.value == 0)
         {
+            Debug.Log(slider.value);
             price = 50;
             srmlow = 3;
             srmhigh = 25;
@@ -61,8 +79,10 @@ public class SlotMachineController : MonoBehaviour
             brmhigh = 200;
         }
 
-        if (bidbools.stobool == true)
+        //        if (bidbools.stobool == true)
+        if (slider.value == 1)
         {
+            Debug.Log(slider.value);
             price = 100;
             srmlow = 3;
             srmhigh = 50;
@@ -72,8 +92,10 @@ public class SlotMachineController : MonoBehaviour
             brmhigh = 400;
         }
 
-        if (bidbools.dwie == true)
+//        if (bidbools.dwie == true)
+        if (slider.value == 2)
         {
+            Debug.Log(slider.value);
             price = 200;
             srmlow = 3;
             srmhigh = 100;
@@ -124,7 +146,8 @@ public class SlotMachineController : MonoBehaviour
             }
 
 
-            if (bidbools.sto == true || bidbools.dwie == true)
+//            if (bidbools.sto == true || bidbools.dwie == true)
+            if(slider.value == 1 || slider.value == 2)
             {
                 // Szansa 10%
                 if (x >= 90)
@@ -215,8 +238,6 @@ public class SlotMachineController : MonoBehaviour
                 PlayerPrefs.SetInt("Stan", stankonta);
                 tmSlotMachine.text = BonusRandomMoney.ToString();
             }
-
-
         }
     }
 }

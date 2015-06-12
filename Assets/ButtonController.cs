@@ -7,7 +7,7 @@ public class ButtonController : MonoBehaviour
     //public GameObject SoundController;
     public GameObject soundoff;
     public bool soundoffbtn = true;
-
+    public Slider GraficSlider;
     public GameObject pauza;
     public SpawnController contro;
     public bool duzaglupota = true;
@@ -27,9 +27,10 @@ public class ButtonController : MonoBehaviour
 
     public GameObject loadingGraphic;
 
-    void Start()
-    {
-    }
+//    void Start()
+//    {
+//        GraficSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+//    }
 
 
     void Update()
@@ -130,6 +131,16 @@ public class ButtonController : MonoBehaviour
             Debug.Log("Zamkniecie pauzy");
 
         }
+    }
+
+    public void ValueChangeCheck()
+    {
+        Debug.Log(GraficSlider.value);
+    }
+
+    void OnMouseDown()
+    {
+        Debug.Log("click!!!");
     }
 
 }

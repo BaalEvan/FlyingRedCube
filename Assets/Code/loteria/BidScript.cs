@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 
 public class BidScript : MonoBehaviour
@@ -75,4 +75,4 @@ public class BidScript : MonoBehaviour
         }
 
     }
-}
+}*/
