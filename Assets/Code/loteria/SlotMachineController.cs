@@ -55,13 +55,13 @@ public class SlotMachineController : MonoBehaviour
 
 
 
-    void Update()
+    void FixedUpdate()
     {
-        value = slider.value;
+        //value = slider.value;
        // Debug.Log(value);
     }
     
-    public void OnValueChanged (float value)
+    public void OnValueChanged ()//float value)
     {
        var SM = GameObject.Find("Slotmachine");
         var SMA = SM.GetComponent<Animator>();
