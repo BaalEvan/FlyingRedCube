@@ -1,28 +1,23 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Gift\GiftController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\ButtonController.cs">
     <Files>
       <File FileName="Assets\Code\loteria\SlotMachine.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\game\postac.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\game\flyredcubefly.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\menu\playbtn.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\menu\endGamebtn.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\game\backtomenugame.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\game\floorscript.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\game\figurki.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\menu\nobtn.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\menu\gotorecordbtn.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\menu\soundgame.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\menu\sounddontdestroy.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\menu\soundbtn.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\menu\exitbtn.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\game\GlobalController.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\game\soundstoponstart.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\rekordy\backtomenubtn.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\game\score.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\menu\textmenu.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\game\textcode.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\Gift\GiftController.cs" Line="17" Column="41" />
+      <File FileName="Assets\Code\Gift\GiftController.cs" Line="1" Column="1" />
+      <File FileName="Assets\ButtonController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

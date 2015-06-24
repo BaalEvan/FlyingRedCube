@@ -73,6 +73,7 @@ public class ButtonController : MonoBehaviour
     public void ChangeScene(string name)
     {
         Application.LoadLevel(name);
+        Debug.Log("click");
     }
 
     public void OnLevelWasLoaded(int level)
