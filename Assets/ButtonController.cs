@@ -6,7 +6,7 @@ public class ButtonController : MonoBehaviour
 {
     //public GameObject SoundController;
     public GameObject soundoff;
-    public bool soundoffbtn = true;
+    public bool soundoffbtn;
     public Slider GraficSlider;
     public GameObject pauza;
     public SpawnController contro;
@@ -24,20 +24,10 @@ public class ButtonController : MonoBehaviour
     public GameObject statsBtn;
     public GameObject loteryBtn;
     public GameObject shopBtn;
+    public GameObject soundbtntrue;
+    public GameObject soundbtnfalse;
 
     public GameObject loadingGraphic;
-
-//    void Start()
-//    {
-//        GraficSlider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
-//    }
-
-
-    void Update()
-    {
-        //if(Input.GetKeyDown(KeyCode.Escape))
-        //       Application.LoadLevel("koniec");
-    }
 
     public void loading()
     {
@@ -45,6 +35,30 @@ public class ButtonController : MonoBehaviour
         DontDestroyOnLoad(loadingGraphic);
         Application.LoadLevel("game");
     }
+
+    // SOUND
+
+    public void playSoundPlay()
+    {
+        soundoffbtn = false;
+        soundbtnfalse.SetActive(true);
+        soundbtntrue.SetActive(false);
+
+        AudioListener.pause = true;
+        PlayerPrefs.SetInt("soundset", 1);
+    }
+
+    public void stopSoundPlay()
+    {
+        soundoffbtn = true;
+        soundbtnfalse.SetActive(false);
+        soundbtntrue.SetActive(true);
+
+        AudioListener.pause = false;
+        PlayerPrefs.SetInt("soundset", 0);
+    }
+
+    // Animation EXIT & SETTINGS
 
     public void stopAnimatorMenuExitBtn()
     {
