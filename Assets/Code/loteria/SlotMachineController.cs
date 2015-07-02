@@ -20,7 +20,7 @@ public class SlotMachineController : MonoBehaviour
     public TextMesh tmSlotMachine;
     public GameObject EM;
     public GameObject selectButton;
-    public GameObject gotowardrobeButton;
+   // public GameObject gotowardrobeButton;
 
 //    public BidScript bidbools;
 
@@ -63,8 +63,8 @@ public class SlotMachineController : MonoBehaviour
     
     public void OnValueChanged ()//float value)
     {
-       var SM = GameObject.Find("Slotmachine");
-        var SMA = SM.GetComponent<Animator>();
+      // var SM = GameObject.Find("Slotmachine");
+       // var SMA = SM.GetComponent<Animator>();
 
         //        if (bidbools.piec == true)
         if (slider.value == 0)
@@ -121,9 +121,9 @@ public class SlotMachineController : MonoBehaviour
         else {
             
 
-            SMA.enabled = true;
-            SMA.Rebind();
-            StartCoroutine(SlotTimeMachine());
+//            SMA.enabled = true;
+//            SMA.Rebind();
+//            StartCoroutine(SlotTimeMachine());
 
             int punktacjaSM = PlayerPrefs.GetInt("punktacja", 0) - price;
             PlayerPrefs.SetInt("punktacja", punktacjaSM);
@@ -160,7 +160,7 @@ public class SlotMachineController : MonoBehaviour
                         {
                             PlayerPrefs.SetInt("outfit2", 1);
                             outfit2.SetActive(true);
-                            gotowardrobeButton.SetActive(true);
+                            //gotowardrobeButton.SetActive(true);
                             outfit = true;
                             slotmachinetext.SetActive(false);
                         }
@@ -178,7 +178,7 @@ public class SlotMachineController : MonoBehaviour
                         {
                             PlayerPrefs.SetInt("outfit3", 1);
                             outfit3.SetActive(true);
-                            gotowardrobeButton.SetActive(true);
+                           // gotowardrobeButton.SetActive(true);
                             outfit = true;
                             slotmachinetext.SetActive(false);
                         }
@@ -196,7 +196,7 @@ public class SlotMachineController : MonoBehaviour
                         {
                             PlayerPrefs.SetInt("outfit4", 1);
                             outfit4.SetActive(true);
-                            gotowardrobeButton.SetActive(true);
+                           // gotowardrobeButton.SetActive(true);
                             outfit = true;
                             slotmachinetext.SetActive(false);
                         }
