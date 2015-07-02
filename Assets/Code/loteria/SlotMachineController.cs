@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SlotMachineController : MonoBehaviour
 {
-    private float value;
+    //private float value;
     public int price;
     public Slider slider;
     public GameObject outfit2;
@@ -20,6 +20,7 @@ public class SlotMachineController : MonoBehaviour
     public TextMesh tmSlotMachine;
     public GameObject EM;
     public GameObject selectButton;
+    public GameObject StartButton;
    // public GameObject gotowardrobeButton;
 
 //    public BidScript bidbools;
@@ -35,12 +36,15 @@ public class SlotMachineController : MonoBehaviour
     public int brmlow;
     public int brmhigh;
 
+    private bool sto = false;
+    private bool piecdzesiat = false;
+    private bool dwiescie = false;
     
 
-   void Start()
-   {
-       Debug.Log(value);
-   }
+//   void Start()
+//   {
+//       Debug.Log(value);
+//   }
 
     public IEnumerator SlotTimeMachine()
     {
@@ -55,13 +59,10 @@ public class SlotMachineController : MonoBehaviour
 
 
 
-    void FixedUpdate()
-    {
-        //value = slider.value;
-       // Debug.Log(value);
-    }
-    
-    public void OnValueChanged ()//float value)
+
+
+   
+    void OnMouseDown()
     {
       // var SM = GameObject.Find("Slotmachine");
        // var SMA = SM.GetComponent<Animator>();

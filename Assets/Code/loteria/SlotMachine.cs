@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
 public class SlotMachine : MonoBehaviour
@@ -26,3 +27,4 @@ public class SlotMachine : MonoBehaviour
      //   Text.SetActive(true);
     }
 }
+
