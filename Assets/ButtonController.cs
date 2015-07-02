@@ -29,18 +29,6 @@ public class ButtonController : MonoBehaviour
 
     public GameObject loadingGraphic;
 
-    public bool start = false;
-
-    void FixedUpdate()
-    {
-        Debug.Log(start);   
-    }
-
-    public void StartBtnLot()
-    {
-        start = true;
-        Debug.Log(start);
-    }
 
     public void loading()
     {
