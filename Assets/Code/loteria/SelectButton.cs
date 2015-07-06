@@ -24,10 +24,13 @@ public class SelectButton : MonoBehaviour
     {
         if (SmcController.outfit == true)
         {
+            SmcController.outfit = false;
+            SmcController.pandaOutfit = false;
+            SmcController.mummyOutfit = false;
+            SmcController.ramboOutfit = false;
             mummy.SetActive(false);
             rambo.SetActive(false);
             panda.SetActive(false);
-            map.SetActive(false);
             gotowardrobeBtn.SetActive(false);
         }
 

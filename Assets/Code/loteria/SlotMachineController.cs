@@ -11,7 +11,6 @@ public class SlotMachineController : MonoBehaviour
     public GameObject outfit2;
     public GameObject outfit3;
     public GameObject outfit4;
-    public GameObject map;
 
     public GameObject tapstarttoslot;
     public GameObject slotmachinetext;
@@ -20,12 +19,16 @@ public class SlotMachineController : MonoBehaviour
     public GameObject EM;
     public GameObject selectButton;
     public GameObject StartButton;
-   // public GameObject gotowardrobeButton;
+   public GameObject gotowardrobeButton;
 
      public BidScript bidbools;
 
     public bool slotsecond = false;
     public bool outfit = false;
+
+    public bool mummyOutfit = false;
+    public bool ramboOutfit = false;
+    public bool pandaOutfit = false;
 
     //Zmienne
     public int srmlow;
@@ -35,26 +38,32 @@ public class SlotMachineController : MonoBehaviour
     public int brmlow;
     public int brmhigh;
 
-
-    
-
-
     public IEnumerator SlotTimeMachine()
     {
         tapstarttoslot.SetActive(false);
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
         yield return new WaitForSeconds(2);
-        slotmachinetext.gameObject.SetActive(true);
+        if (outfit == false)
+        {
+            slotmachinetext.gameObject.SetActive(true);
+        }
+        if (pandaOutfit == true)
+        {
+            outfit2.SetActive(true);
+        }
+        if (mummyOutfit == true)
+        {
+            outfit3.SetActive(true);
+        }
+        if (ramboOutfit == true)
+        {
+            outfit4.SetActive(true);
+        }
         selectButton.SetActive(true);
         //gameObject.SetActive(false);
     }
 
-
-
-
-
-   
     void OnMouseDown()
     {
       var SM = GameObject.Find("Slotmachine");
@@ -65,11 +74,11 @@ public class SlotMachineController : MonoBehaviour
            
             price = 50;
             srmlow = 3;
-            srmhigh = 25;
-            rmlow = 25;
-            rmhigh = 125;
-            brmlow = 125;
-            brmhigh = 200;
+            srmhigh = 35;
+            rmlow = 36;
+            rmhigh = 135;
+            brmlow = 136;
+            brmhigh = 210;
         }
 
          if (bidbools.stobool == true)
@@ -77,11 +86,11 @@ public class SlotMachineController : MonoBehaviour
            
             price = 100;
             srmlow = 3;
-            srmhigh = 50;
-            rmlow = 50;
-            rmhigh = 250;
-            brmlow = 251;
-            brmhigh = 400;
+            srmhigh = 60;
+            rmlow = 61;
+            rmhigh = 260;
+            brmlow = 261;
+            brmhigh = 410;
         }
 
          if (bidbools.dwie == true)
@@ -89,11 +98,11 @@ public class SlotMachineController : MonoBehaviour
             
             price = 200;
             srmlow = 3;
-            srmhigh = 100;
-            rmlow = 101;
-            rmhigh = 500;
-            brmlow = 501;
-            brmhigh = 800;
+            srmhigh = 110;
+            rmlow = 111;
+            rmhigh = 510;
+            brmlow = 511;
+            brmhigh = 810;
         }
 
         int x = Random.Range(0, 100);
@@ -110,7 +119,8 @@ public class SlotMachineController : MonoBehaviour
 
         // Losowanie
         else {
-            
+
+            Debug.Log(x);
 
             SMA.enabled = true;
             SMA.Rebind();
@@ -136,7 +146,6 @@ public class SlotMachineController : MonoBehaviour
                 tmSlotMachine.text = RandomMoney.ToString();
             }
 
-
              if (bidbools.sto == true || bidbools.dwie == true)
             {
                 // Szansa 10%
@@ -149,8 +158,8 @@ public class SlotMachineController : MonoBehaviour
                         if (zestaw2 == 0)
                         {
                             PlayerPrefs.SetInt("outfit2", 1);
-                            outfit2.SetActive(true);
-                            //gotowardrobeButton.SetActive(true);
+                            pandaOutfit = true;
+                            gotowardrobeButton.SetActive(true);
                             outfit = true;
                             slotmachinetext.SetActive(false);
                         }
@@ -161,14 +170,14 @@ public class SlotMachineController : MonoBehaviour
                             tmSlotMachine.text = BonusRandomMoney.ToString();
                         }
                     }
-                    if (x > 92 && x <= 94)
+                    if (x > 93 && x <= 94)
                     {
                         int zestaw3 = PlayerPrefs.GetInt("outfit3", 0);
                         if (zestaw3 == 0)
                         {
                             PlayerPrefs.SetInt("outfit3", 1);
-                            outfit3.SetActive(true);
-                           // gotowardrobeButton.SetActive(true);
+                            mummyOutfit = true;
+                            gotowardrobeButton.SetActive(true);
                             outfit = true;
                             slotmachinetext.SetActive(false);
                         }
@@ -179,14 +188,14 @@ public class SlotMachineController : MonoBehaviour
                             tmSlotMachine.text = BonusRandomMoney.ToString();
                         }
                     }
-                    if (x > 94 && x <= 96)
+                    if (x > 95 && x <= 96)
                     {
                         int zestaw4 = PlayerPrefs.GetInt("outfit4", 0);
                         if (zestaw4 == 0)
                         {
                             PlayerPrefs.SetInt("outfit4", 1);
-                            outfit4.SetActive(true);
-                           // gotowardrobeButton.SetActive(true);
+                            ramboOutfit = true;
+                            gotowardrobeButton.SetActive(true);
                             outfit = true;
                             slotmachinetext.SetActive(false);
                         }
@@ -198,35 +207,14 @@ public class SlotMachineController : MonoBehaviour
                         }
                     }
 
-                    if (x > 96 && x <= 100)
+                    if (x > 97 && x <= 100)
                     {
-                    //    map.SetActive(true);
-                    //    gotowardrobeButton.SetActive(true);
-                    //    outfit = true;
-                    //    slotmachinetext.SetActive(false);
-                    //}
-                    //else
-                    //{
-                    //    int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
-                    //    PlayerPrefs.SetInt("Stan", stankonta);
-                    //    tmSlotMachine.text = BonusRandomMoney.ToString();
-                    //}
-
-                    //if (x > 98 && x <= 100)
-                    //{
                         int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
                         PlayerPrefs.SetInt("Stan", stankonta);
                         tmSlotMachine.text = BonusRandomMoney.ToString();
                     }
 
                 }
-            }
-
-            else
-            {
-                int stankonta = PlayerPrefs.GetInt("punktacja", 0) + BonusRandomMoney;
-                PlayerPrefs.SetInt("Stan", stankonta);
-                tmSlotMachine.text = BonusRandomMoney.ToString();
             }
         }
     }
